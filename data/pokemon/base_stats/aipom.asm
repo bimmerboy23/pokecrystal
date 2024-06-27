@@ -1,10 +1,10 @@
 	db AIPOM ; 190
 
-	db  55,  70,  55,  85,  40,  55
+	db  70,  85,  65,  105,  40,  60
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
-	db 45 ; catch rate
+	db 200 ; catch rate
 	db 94 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio

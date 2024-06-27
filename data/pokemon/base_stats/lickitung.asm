@@ -1,6 +1,6 @@
 	db LICKITUNG ; 108
 
-	db  90,  55,  75,  30,  60,  75
+	db  90,  75,  85,  30,  60,  85
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
