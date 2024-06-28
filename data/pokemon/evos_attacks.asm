@@ -2262,7 +2262,7 @@ LedianEvosAttacks:
 	db 1, TACKLE
 	db 1, SUPERSONIC
 	db 8, SUPERSONIC
-	db 15, COMET_PUNCH
+	db 18, MACH_PUNCH
 	db 24, LIGHT_SCREEN
 	db 24, REFLECT
 	db 24, SAFEGUARD
@@ -2393,7 +2393,7 @@ TogeticEvosAttacks:
 	db 7, METRONOME
 	db 18, SWEET_KISS
 	db 25, ENCORE
-	db 31, SAFEGUARD
+	db 31, MOONLIGHT
 	db 38, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -2609,7 +2609,7 @@ YanmaEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, DOUBLE_TEAM
 	db 19, SONICBOOM
-	db 25, DETECT
+	db 25, MEGA_DRAIN
 	db 31, SUPERSONIC
 	db 37, WING_ATTACK
 	db 43, SCREECH
@@ -2672,7 +2672,7 @@ MurkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 11, PURSUIT
-	db 16, HAZE
+	db 16, WING_ATTACK
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
 	db 41, MEAN_LOOK
@@ -2765,7 +2765,7 @@ DunsparceEvosAttacks:
 	db 13, GLARE
 	db 18, SPITE
 	db 26, PURSUIT
-	db 30, SCREECH
+	db 30, DIG
 	db 38, TAKE_DOWN
 	db 0 ; no more level-up moves
 
@@ -2777,7 +2777,7 @@ GligarEvosAttacks:
 	db 20, QUICK_ATTACK
 	db 28, FAINT_ATTACK
 	db 36, SLASH
-	db 44, SCREECH
+	db 44, EARTHQUAKE
 	db 52, GUILLOTINE
 	db 0 ; no more level-up moves
 
@@ -2866,7 +2866,7 @@ HeracrossEvosAttacks:
 	db 6, HORN_ATTACK
 	db 12, ENDURE
 	db 19, FURY_ATTACK
-	db 27, COUNTER
+	db 27, KARATE_CHOP
 	db 35, TAKE_DOWN
 	db 44, REVERSAL
 	db 54, MEGAHORN
