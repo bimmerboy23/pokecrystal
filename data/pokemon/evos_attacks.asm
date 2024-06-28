@@ -2141,7 +2141,7 @@ TyphlosionEvosAttacks:
 	db 38, ROLLOUT
 	db 41, SWIFT
 	db 45, FLAMETHROWER
-	db 55, DOUBLE-EDGE
+	db 55, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 TotodileEvosAttacks:

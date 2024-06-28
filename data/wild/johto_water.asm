@@ -90,7 +90,7 @@ JohtoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 40, SEADRA
 	db 40, TENTACRUEL
-	db 40, LATURN
+	db 40, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
@@ -166,7 +166,7 @@ JohtoWaterWildMons:
 	def_water_wildmons ROUTE_40
 	db 6 percent ; encounter rate
 	db 35, TENTACRUEL
-	db 32, LATURN
+	db 32, LANTURN
 	db 35, MANTINE
 	end_water_wildmons
 
@@ -207,7 +207,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons NEW_BARK_TOWN
 	db 6 percent ; encounter rate
-	db 35, TENTARUEL
+	db 35, TENTACRUEL
 	db 35, SEAKING
 	db 35, SEADRA
 	end_water_wildmons

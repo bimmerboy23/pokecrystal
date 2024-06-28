@@ -1186,7 +1186,7 @@ JohtoGrassWildMons:
 	db 5, DIGLETT
 	db 7, GEODUDE
 	db 5, TEDDIURSA
-	db 7, TEDDISURA
+	db 7, TEDDIURSA
 	db 7, DUNSPARCE
 	; day
 	db 6, GEODUDE
@@ -1434,7 +1434,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 8, PIDGEY
-	db 8, LEDBYA
+	db 8, LEDYBA
 	db 9, BELLSPROUT
 	db 9, GROWLITHE
 	db 9, ELEKID
@@ -1482,7 +1482,7 @@ JohtoGrassWildMons:
 	db 22, NOCTOWL
 	db 23, STANTLER
 	db 22, MURKROW
-	db 22, UMRBEON
+	db 22, UMBREON
 	db 22, UMBREON
 	end_grass_wildmons
 
