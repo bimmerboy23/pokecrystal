@@ -117,57 +117,57 @@ KantoGrassWildMons:
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 34, GRAVELER
-	db 32, RHYHORN
-	db 33, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, RHYDON
-	db 35, RHYDON
+	db 44, GRAVELER
+	db 42, RHYHORN
+	db 43, ONIX
+	db 44, GOLBAT
+	db 45, SANDSLASH
+	db 45, RHYDON
+	db 45, RHYDON
 	; day
-	db 34, GRAVELER
-	db 32, RHYHORN
-	db 33, ONIX
-	db 34, GOLBAT
-	db 35, SANDSLASH
-	db 35, RHYDON
-	db 35, RHYDON
+	db 44, GRAVELER
+	db 42, RHYHORN
+	db 43, ONIX
+	db 44, GOLBAT
+	db 45, SANDSLASH
+	db 45, RHYDON
+	db 45, RHYDON
 	; nite
-	db 34, GOLBAT
-	db 34, GRAVELER
-	db 32, ONIX
-	db 36, GRAVELER
-	db 38, GRAVELER
-	db 40, GRAVELER
-	db 40, GRAVELER
+	db 44, GOLBAT
+	db 44, GRAVELER
+	db 42, ONIX
+	db 46, GRAVELER
+	db 48, GRAVELER
+	db 50, GRAVELER
+	db 50, GRAVELER
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, ZUBAT
-	db 22, RATICATE
-	db 24, GOLBAT
-	db 21, SLOWPOKE
-	db 20, RATTATA
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 42, ZUBAT
+	db 42, RATICATE
+	db 44, GOLBAT
+	db 41, SLOWPOKE
+	db 40, RATTATA
+	db 43, SLOWPOKE
+	db 43, SLOWPOKE
 	; day
-	db 22, ZUBAT
-	db 22, RATICATE
-	db 24, GOLBAT
-	db 21, SLOWPOKE
-	db 20, RATTATA
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 42, ZUBAT
+	db 42, RATICATE
+	db 44, GOLBAT
+	db 41, SLOWPOKE
+	db 40, RATTATA
+	db 43, SLOWPOKE
+	db 43, SLOWPOKE
 	; nite
-	db 22, ZUBAT
-	db 22, RATICATE
-	db 24, GOLBAT
-	db 21, SLOWPOKE
-	db 20, RATTATA
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 42, ZUBAT
+	db 42, RATICATE
+	db 44, GOLBAT
+	db 41, SLOWPOKE
+	db 40, RATTATA
+	db 43, SLOWPOKE
+	db 43, SLOWPOKE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1
@@ -761,85 +761,85 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
-	db 28, SANDSLASH
-	db 32, PONYTA
-	db 30, RATICATE
-	db 30, DODUO
-	db 30, ARBOK
-	db 30, ARBOK
+	db 38, DODUO
+	db 38, SANDSLASH
+	db 42, PONYTA
+	db 40, RATICATE
+	db 40, DODUO
+	db 40, ARBOK
+	db 40, ARBOK
 	; day
-	db 28, DODUO
-	db 28, SANDSLASH
-	db 32, PONYTA
-	db 30, RATICATE
-	db 30, DODUO
-	db 30, ARBOK
-	db 30, ARBOK
+	db 38, DODUO
+	db 38, SANDSLASH
+	db 42, PONYTA
+	db 40, RATICATE
+	db 40, DODUO
+	db 40, ARBOK
+	db 40, ARBOK
 	; nite
-	db 28, NOCTOWL
-	db 28, RATICATE
-	db 32, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 30, QUAGSIRE
-	db 30, QUAGSIRE
+	db 38, NOCTOWL
+	db 38, RATICATE
+	db 42, NOCTOWL
+	db 40, RATICATE
+	db 40, QUAGSIRE
+	db 40, QUAGSIRE
+	db 40, QUAGSIRE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 38, DODUO
+	db 38, ARBOK
+	db 40, RATICATE
+	db 40, DODUO
+	db 42, PONYTA
+	db 40, DODRIO
+	db 40, DODRIO
 	; day
-	db 28, DODUO
-	db 28, ARBOK
-	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 38, DODUO
+	db 38, ARBOK
+	db 40, RATICATE
+	db 40, DODUO
+	db 42, PONYTA
+	db 40, DODRIO
+	db 40, DODRIO
 	; nite
-	db 28, QUAGSIRE
-	db 28, NOCTOWL
-	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 32, NOCTOWL
-	db 32, NOCTOWL
-	db 32, NOCTOWL
+	db 38, QUAGSIRE
+	db 38, NOCTOWL
+	db 40, RATICATE
+	db 40, QUAGSIRE
+	db 42, NOCTOWL
+	db 42, NOCTOWL
+	db 42, NOCTOWL
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, TANGELA
-	db 40, PONYTA
-	db 40, RAPIDASH
-	db 42, ARBOK
-	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
+	db 59, TANGELA
+	db 60, PONYTA
+	db 60, RAPIDASH
+	db 62, ARBOK
+	db 61, DODUO
+	db 63, DODRIO
+	db 63, DODRIO
 	; day
-	db 39, TANGELA
-	db 40, PONYTA
-	db 40, RAPIDASH
-	db 42, ARBOK
-	db 41, DODUO
-	db 43, DODRIO
-	db 43, DODRIO
+	db 59, TANGELA
+	db 60, PONYTA
+	db 60, RAPIDASH
+	db 62, ARBOK
+	db 61, DODUO
+	db 63, DODRIO
+	db 63, DODRIO
 	; nite
-	db 39, TANGELA
-	db 40, POLIWHIRL
-	db 40, GOLBAT
-	db 40, POLIWHIRL
-	db 42, GOLBAT
-	db 42, GOLBAT
-	db 42, GOLBAT
+	db 59, TANGELA
+	db 60, POLIWHIRL
+	db 60, GOLBAT
+	db 60, POLIWHIRL
+	db 62, GOLBAT
+	db 62, GOLBAT
+	db 62, GOLBAT
 	end_grass_wildmons
 
 	db -1 ; end
