@@ -77,7 +77,7 @@ CharmanderEvosAttacks:
 	db 25, METAL_CLAW
 	db 31, FLAMETHROWER
 	db 37, SLASH
-	db 43, DRAGON_BREATH
+	db 43, DRAGONBREATH
 	db 49, FIRE_SPIN
 	db 0 ; no more level-up moves
 
@@ -93,7 +93,7 @@ CharmeleonEvosAttacks:
 	db 27, METAL_CLAW
 	db 34, FLAMETHROWER
 	db 41, SLASH
-	db 48, DRAGON_BREATH
+	db 48, DRAGONBREATH
 	db 55, FIRE_SPIN
 	db 0 ; no more level-up moves
 
@@ -110,7 +110,7 @@ CharizardEvosAttacks:
 	db 34, FLAMETHROWER
 	db 36, WING_ATTACK
 	db 44, SLASH
-	db 54, DRAGON_BREATH
+	db 54, DRAGONBREATH
 	db 64, FIRE_SPIN
 	db 0 ; no more level-up moves
 
