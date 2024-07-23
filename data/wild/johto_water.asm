@@ -60,9 +60,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons MOUNT_MORTAR_2F_INSIDE
 	db 2 percent ; encounter rate
-	db 30, GOLDEEN
-	db 35, AZUMARILL
-	db 35, SEAKING
+	db 25, GOLDEEN
+	db 30, AZUMARILL
+	db 30, SEAKING
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_B1F
@@ -88,16 +88,16 @@ JohtoWaterWildMons:
 
 	def_water_wildmons WHIRL_ISLAND_LUGIA_CHAMBER
 	db 4 percent ; encounter rate
-	db 40, SEADRA
-	db 40, TENTACRUEL
-	db 40, LANTURN
+	db 35, SEADRA
+	db 35, TENTACRUEL
+	db 35, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 35, SEAKING
-	db 35, GOLDUCK
-	db 35, OCTILLERY
+	db 30, SEAKING
+	db 30, GOLDUCK
+	db 30, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -111,7 +111,7 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 35, POLIWRATH
 	db 30, CROCONAW
-	db 35, WARTORTLE
+	db 30, WARTORTLE
 	end_water_wildmons
 
 	def_water_wildmons DRAGONS_DEN_B1F
@@ -123,8 +123,8 @@ JohtoWaterWildMons:
 
 	def_water_wildmons OLIVINE_PORT
 	db 2 percent ; encounter rate
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	db 25, TENTACOOL
+	db 30, TENTACRUEL
 	db 30, MANTINE
 	end_water_wildmons
 
@@ -165,16 +165,16 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_40
 	db 6 percent ; encounter rate
-	db 35, TENTACRUEL
-	db 32, LANTURN
-	db 35, MANTINE
+	db 25, TENTACRUEL
+	db 30, LANTURN
+	db 32, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
 	db 6 percent ; encounter rate
-	db 35, TENTACRUEL
+	db 25, TENTACRUEL
 	db 30, STARYU
-	db 35, QWILFISH
+	db 30, QWILFISH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
@@ -251,7 +251,7 @@ JohtoWaterWildMons:
 	db 6 percent ; encounter rate
 	db 15, MAGIKARP
 	db 20, MAGIKARP
-	db 35, GYARADOS
+	db 30, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons BLACKTHORN_CITY

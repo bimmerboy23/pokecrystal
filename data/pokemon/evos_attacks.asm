@@ -14,6 +14,8 @@ SECTION "Evolutions and Attacks", ROMX
 
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
+EvosAttacks::
+
 BulbasaurEvosAttacks:
 	db EVOLVE_LEVEL, 16, IVYSAUR
 	db 0 ; no more evolutions
@@ -245,7 +247,7 @@ PidgeottoEvosAttacks:
 	db 23, TWISTER
 	db 33, WING_ATTACK
 	db 43, AGILITY
-	db 55, MIRROR_MOVE
+	db 47, MIRROR_MOVE
 	db 0 ; no more level-up moves
 
 PidgeotEvosAttacks:
@@ -254,13 +256,13 @@ PidgeotEvosAttacks:
 	db 1, SAND_ATTACK
 	db 1, GUST
 	db 1, QUICK_ATTACK
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 23, TWISTER
-	db 33, WING_ATTACK
-	db 46, AGILITY
-	db 61, MIRROR_MOVE
+	db 5, TWISTER
+	db 9, WING_ATTACK
+	db 36, AGILITY
+	db 40, MIRROR_MOVE
+	db 42, PURSUIT
+	db 46, SWIFT
+	db 51, STEEL_WING
 	db 0 ; no more level-up moves
 
 RattataEvosAttacks:
@@ -346,6 +348,7 @@ PikachuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
+	db 1, NASTY_PLOT
 	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
@@ -360,6 +363,7 @@ PikachuEvosAttacks:
 RaichuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
+	db 1, NASTY_PLOT
 	db 1, TAIL_WHIP
 	db 1, QUICK_ATTACK
 	db 1, THUNDERBOLT
@@ -502,9 +506,10 @@ NinetalesEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, EMBER
 	db 1, QUICK_ATTACK
+	db 1, NASTY_PLOT
 	db 1, CONFUSE_RAY
 	db 1, PSYWAVE
-	db 43, FIRE_SPIN
+	db 43, PSYBEAM
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
@@ -689,8 +694,9 @@ MeowthEvosAttacks:
 	db 20, PAY_DAY
 	db 28, FAINT_ATTACK
 	db 35, SCREECH
-	db 41, SLASH
-	db 46, CRUNCH
+	db 40, NASTY_PLOT
+	db 44, SLASH
+	db 47, CRUNCH
 	db 0 ; no more level-up moves
 
 PersianEvosAttacks:
@@ -702,7 +708,8 @@ PersianEvosAttacks:
 	db 20, PAY_DAY
 	db 29, FAINT_ATTACK
 	db 38, SCREECH
-	db 46, SLASH
+	db 43, NASTY_PLOT
+	db 48, SLASH
 	db 53, CRUNCH
 	db 0 ; no more level-up moves
 
@@ -1112,7 +1119,7 @@ MagnetonEvosAttacks:
 	db 27, LOCK_ON
 	db 35, TRI_ATTACK
 	db 43, SCREECH
-	db 53, ZAP_CANNON
+	db 50, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1176,7 +1183,7 @@ DewgongEvosAttacks:
 	db 21, REST
 	db 32, TAKE_DOWN
 	db 43, ICE_BEAM
-	db 60, SAFEGUARD
+	db 50, SAFEGUARD
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
@@ -1205,7 +1212,7 @@ MukEvosAttacks:
 	db 23, MINIMIZE
 	db 31, SCREECH
 	db 45, ACID_ARMOR
-	db 60, SLUDGE_BOMB
+	db 53, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
 ShellderEvosAttacks:
@@ -1298,6 +1305,7 @@ DrowzeeEvosAttacks:
 	db 31, POISON_GAS
 	db 36, MEDITATE
 	db 40, PSYCHIC_M
+	db 41, NASTY_PLOT
 	db 43, PSYCH_UP
 	db 45, FUTURE_SIGHT
 	db 0 ; no more level-up moves
@@ -1313,7 +1321,8 @@ HypnoEvosAttacks:
 	db 25, HEADBUTT
 	db 33, POISON_GAS
 	db 40, MEDITATE
-	db 49, PSYCHIC_M
+	db 47, NASTY_PLOT
+	db 50, PSYCHIC_M
 	db 55, PSYCH_UP
 	db 60, FUTURE_SIGHT
 	db 0 ; no more level-up moves
@@ -2053,6 +2062,7 @@ MewEvosAttacks:
 	db 30, METRONOME
 	db 40, PSYCHIC_M
 	db 50, ANCIENTPOWER
+	db 60, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 ChikoritaEvosAttacks:
@@ -2352,6 +2362,7 @@ PichuEvosAttacks:
 	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, SWEET_KISS
+	db 20, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 CleffaEvosAttacks:
@@ -2576,7 +2587,8 @@ AipomEvosAttacks:
 	db 12, BATON_PASS
 	db 19, FURY_SWIPES
 	db 27, SWIFT
-	db 36, MACH_PUNCH
+	db 32, MACH_PUNCH
+	db 39, NASTY_PLOT
 	db 46, AGILITY
 	db 0 ; no more level-up moves
 
@@ -2682,6 +2694,7 @@ SlowkingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
+	db 1, NASTY_PLOT
 	db 6, GROWL
 	db 15, WATER_GUN
 	db 20, CONFUSION
@@ -2727,6 +2740,7 @@ GirafarigEvosAttacks:
 	db 20, AGILITY
 	db 30, BATON_PASS
 	db 41, PSYBEAM
+	db 46, NASTY_PLOT
 	db 54, CRUNCH
 	db 0 ; no more level-up moves
 
@@ -3045,12 +3059,14 @@ HoundourEvosAttacks:
 	db 27, FAINT_ATTACK
 	db 35, FLAMETHROWER
 	db 43, CRUNCH
+	db 52, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEER
 	db 1, EMBER
+	db 1, NASTY_PLOT
 	db 7, ROAR
 	db 13, SMOG
 	db 20, BITE

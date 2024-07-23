@@ -147,9 +147,9 @@ ItemDescriptions:
 	dw DragonFangDesc
 	dw TeruSama14Desc
 	dw LeftoversDesc
-	dw TeruSama15Desc
-	dw TeruSama16Desc
-	dw TeruSama17Desc
+	dw OldAmberDesc
+	dw DomeFossilDesc
+	dw HelixFossilDesc
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
@@ -824,13 +824,19 @@ LeftoversDesc:
 	next "battle. (HOLD)@"
 
 TeruSama15Desc:
-	db   "?@"
+	db   "A piece of amber" 
+	next "contains genes of"
+	next "an ancient Pokémon.@"
 
 TeruSama16Desc:
-	db   "?@"
+	db   "A piece of ancient"
+	next	"marine Pokémon's" 
+	next	"shell.@"
 
 TeruSama17Desc:
-	db   "?@"
+	db   "A piece of ancient"
+	next 	"marine Pokémon's" 
+	next	"seashell.@"
 
 MysteryBerryDesc:
 	db   "A self-restore"

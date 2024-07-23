@@ -160,9 +160,9 @@ ItemEffects:
 	dw NoEffect            ; DRAGON_FANG
 	dw NoEffect            ; ITEM_91
 	dw NoEffect            ; LEFTOVERS
-	dw NoEffect            ; ITEM_93
-	dw NoEffect            ; ITEM_94
-	dw NoEffect            ; ITEM_95
+	dw NoEffect            ; OLD_AMBER
+	dw NoEffect            ; DOME_FOSSIL
+	dw NoEffect            ; HELIX_FOSSIL
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
@@ -757,6 +757,7 @@ HeavyBall_GetDexEntryBank:
 	push hl
 	push de
 	ld a, [wEnemyMonSpecies]
+	dec a
 	rlca
 	rlca
 	maskbits NUM_DEX_ENTRY_BANKS
@@ -921,7 +922,7 @@ MoonBallMultiplier:
 	push bc
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
-	cp MOON_STONE_RED ; BURN_HEAL
+	cp MOON_STONE
 	pop bc
 	ret nz
 
@@ -978,7 +979,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret nz
+	ret z
 
 	sla b
 	jr c, .max
@@ -1012,7 +1013,7 @@ FastBallMultiplier:
 	cp -1
 	jr z, .next
 	cp c
-	jr nz, .next
+	jr nz, .loop
 	sla b
 	jr c, .max
 
