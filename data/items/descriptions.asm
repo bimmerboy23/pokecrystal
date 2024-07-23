@@ -823,20 +823,17 @@ LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
 
-TeruSama15Desc:
-	db   "A piece of amber" 
-	next "contains genes of"
-	next "an ancient Pokémon.@"
+OldAmberDesc:
+	db   "Ancient piece of" 
+	next "amber.@"
 
-TeruSama16Desc:
+DomeFossilDesc:
 	db   "A piece of ancient"
-	next	"marine Pokémon's" 
-	next	"shell.@"
+	next "marine shell.@" 	
 
-TeruSama17Desc:
+HelixFossilDesc:
 	db   "A piece of ancient"
-	next 	"marine Pokémon's" 
-	next	"seashell.@"
+	next "marine seashell.@"
 
 MysteryBerryDesc:
 	db   "A self-restore"
