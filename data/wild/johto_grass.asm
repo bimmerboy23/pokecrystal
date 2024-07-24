@@ -559,7 +559,7 @@ JohtoGrassWildMons:
 	db 31, SLOWPOKE
 	db 33, GOLBAT
 	db 35, SLOWKING
-	db 35, SLOWPBRO
+	db 35, SLOWBRO
 	end_grass_wildmons
 
 	def_grass_wildmons ILEX_FOREST
@@ -826,7 +826,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	; day
 	db 36, SWINUB
-	db 37, GOLBST
+	db 37, GOLBAT
 	db 37, GOLBAT
 	db 38, SWINUB
 	db 34, JYNX
