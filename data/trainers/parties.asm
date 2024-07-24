@@ -650,7 +650,7 @@ BirdKeeperGroup:
 	db "PETER@", TRAINERTYPE_NORMAL
 	db 11, MURKROW
 	db 11, SPEAROW
-	db 13, FARFETCH'D
+	db 13, FARFETCH_D
 	db -1 ; end
 
 	; BIRD_KEEPER (14)

@@ -101,7 +101,6 @@ GetFruitTreeCount:
 	ret
 
 GetCurTreeFruit:
-GetCurTreeFruit:
 	ld a, [wCurFruitTree]
 	dec a
 	call GetFruitTreeItem
