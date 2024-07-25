@@ -198,7 +198,7 @@ Text_ReceivedGlacierBadge:
 	done
 
 PryceText_GlacierBadgeSpeech:
-	para "It also lets your"
+	text "It also lets your"
 	line "#MON use WHIRL-"
 	cont "POOL to get across"
 	cont "real whirlpools."
