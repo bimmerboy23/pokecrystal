@@ -107,18 +107,18 @@ Jasmine_SteelTypeIntro:
 	line "GYM LEADER. I use"
 	cont "the steel-type."
 
-	para "…Do you know about"
+	para "Do you know about"
 	line "the steel-type?"
 
 	para "It's a type that"
 	line "was only recently"
 	cont "discovered."
 
-	para "…Um… May I begin?"
+	para "Um… May I begin?"
 	done
 
 Jasmine_BetterTrainer:
-	text "…You are a better"
+	text "You are a better"
 	line "trainer than me,"
 
 	para "in both skill and"
@@ -136,8 +136,8 @@ Text_ReceivedMineralBadge:
 	line "MINERALBADGE."
 	done
 
-	para "…Um… Please take"
-	line "this too…"
+	para "Um. Please take"
+	line "this too"
 	done
 
 Text_ReceivedTM09: ; unreferenced
@@ -146,13 +146,13 @@ Text_ReceivedTM09: ; unreferenced
 	done
 
 Jasmine_IronTailSpeech:
-	text "…You could use"
+	text "You could use"
 	line "that TM to teach"
 	cont "IRON TAIL."
 	done
 
 Jasmine_GoodLuck:
-	text "Um… I don't know"
+	text "Um I don't know"
 	line "how to say this,"
 	cont "but good luck…"
 	done
