@@ -1,6 +1,6 @@
 	db DUNSPARCE ; 206
 
-	db 100,  75,  70,  45,  70,  70
+	db 100,  80,  70,  45,  80,  70
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type

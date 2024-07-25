@@ -1,6 +1,6 @@
 	db HOPPIP ; 187
 
-	db  35,  30,  40,  50,  40,  55
+	db  35,  25,  40,  50,  45,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, FLYING ; type

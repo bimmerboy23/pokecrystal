@@ -1,6 +1,6 @@
 	db QUILAVA ; 156
 
-	db  58,  64,  58,  80,  80,  65
+	db  55,  67,  55,  83,  85,  60
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
