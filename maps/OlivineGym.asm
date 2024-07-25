@@ -93,9 +93,9 @@ OlivineGymStatue:
 	jumpstd GymStatue2Script
 
 Jasmine_SteelTypeIntro:
-	text "…Thank you for"
+	text "Thank you for"
 	line "your help at the"
-	cont "LIGHTHOUSE…"
+	cont "LIGHTHOUSE"
 
 	para "But this is dif-"
 	line "ferent. Please"
@@ -114,7 +114,7 @@ Jasmine_SteelTypeIntro:
 	line "was only recently"
 	cont "discovered."
 
-	para "Um… May I begin?"
+	para "Um May I begin?"
 	done
 
 Jasmine_BetterTrainer:
@@ -154,7 +154,7 @@ Jasmine_IronTailSpeech:
 Jasmine_GoodLuck:
 	text "Um I don't know"
 	line "how to say this,"
-	cont "but good luck…"
+	cont "but good luck"
 	done
 
 OlivineGymGuideText:
