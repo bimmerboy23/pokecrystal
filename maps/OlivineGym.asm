@@ -93,9 +93,9 @@ OlivineGymStatue:
 	jumpstd GymStatue2Script
 
 Jasmine_SteelTypeIntro:
-	text "â€¦Thank you for"
+	text "…Thank you for"
 	line "your help at the"
-	cont "LIGHTHOUSEâ€¦"
+	cont "LIGHTHOUSE…"
 
 	para "But this is dif-"
 	line "ferent. Please"
@@ -107,18 +107,18 @@ Jasmine_SteelTypeIntro:
 	line "GYM LEADER. I use"
 	cont "the steel-type."
 
-	para "â€¦Do you know about"
+	para "…Do you know about"
 	line "the steel-type?"
 
 	para "It's a type that"
 	line "was only recently"
 	cont "discovered."
 
-	para "â€¦Umâ€¦ May I begin?"
+	para "…Um… May I begin?"
 	done
 
 Jasmine_BetterTrainer:
-	text "â€¦You are a better"
+	text "…You are a better"
 	line "trainer than me,"
 
 	para "in both skill and"
@@ -136,10 +136,8 @@ Text_ReceivedMineralBadge:
 	line "MINERALBADGE."
 	done
 
-Jasmine_BadgeSpeech:
-	
-	para "â€¦Umâ€¦ Please take"
-	line "this tooâ€¦"
+	para "…Um… Please take"
+	line "this too…"
 	done
 
 Text_ReceivedTM09: ; unreferenced
@@ -148,15 +146,15 @@ Text_ReceivedTM09: ; unreferenced
 	done
 
 Jasmine_IronTailSpeech:
-	text "â€¦You could use"
+	text "…You could use"
 	line "that TM to teach"
 	cont "IRON TAIL."
 	done
 
 Jasmine_GoodLuck:
-	text "Umâ€¦ I don't know"
+	text "Um… I don't know"
 	line "how to say this,"
-	cont "but good luckâ€¦"
+	cont "but good luck…"
 	done
 
 OlivineGymGuideText:
