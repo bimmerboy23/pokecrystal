@@ -137,7 +137,6 @@ Text_ReceivedMineralBadge:
 	done
 
 Jasmine_BadgeSpeech:
-
 	para "Um. Please take"
 	line "this too"
 	done
