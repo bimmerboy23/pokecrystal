@@ -2617,13 +2617,16 @@ YanmaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FORESIGHT
+	db 5, ABSORB
 	db 7, QUICK_ATTACK
-	db 13, DOUBLE_TEAM
-	db 19, SONICBOOM
-	db 25, MEGA_DRAIN
-	db 31, PSYBEAM
-	db 37, WING_ATTACK
-	db 43, GIGA_DRAIN
+	db 10, DOUBLE_TEAM
+	db 14, HYPNOSIS
+	db 17, SONICBOOM
+	db 23, MEGA_DRAIN
+	db 28, PSYBEAM
+	db 33, WING_ATTACK
+	db 40, GIGA_DRAIN
+	db 47, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
