@@ -3,7 +3,7 @@
 	db  65,  30,  70,  85,  90,  85
 	;   hp  atk  def  spd  sat  sdf
 
-	db BUG, FLYING ; type
+	db BUG, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
 	db 160 ; base exp
 	db NO_ITEM, SILVERPOWDER ; items

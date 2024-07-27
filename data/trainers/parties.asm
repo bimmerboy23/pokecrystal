@@ -3094,7 +3094,7 @@ SageGroup:
 
 	; SAGE (4)
 	db "TROY@", TRAINERTYPE_NORMAL
-	db 12, CHIKORITA
+	db 12, SUNKERN
 	db 13, HOOTHOOT
 	db -1 ; end
 
@@ -3126,7 +3126,7 @@ SageGroup:
 
 	; SAGE (9)
 	db "LI@", TRAINERTYPE_NORMAL
-	db 12, SUNKERN
+	db 12, CHIKORITA
 	db 12, BELLSPROUT
 	db 15, HOOTHOOT
 	db -1 ; end

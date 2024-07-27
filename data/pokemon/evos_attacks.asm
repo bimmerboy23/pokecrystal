@@ -428,6 +428,8 @@ NidoqueenEvosAttacks:
 	db 1, DOUBLE_KICK
 	db 1, BITE
 	db 33, BODY_SLAM
+	db 42, EARTHQUAKE
+	db 54, CROSS_CHOP
 	db 0 ; no more level-up moves
 
 NidoranMEvosAttacks:
@@ -463,6 +465,8 @@ NidokingEvosAttacks:
 	db 1, DOUBLE_KICK
 	db 1, POISON_STING
 	db 33, THRASH
+	db 42, EARTHQUAKE
+	db 54, MEGAHORN
 	db 0 ; no more level-up moves
 
 ClefairyEvosAttacks:
@@ -1247,6 +1251,7 @@ GastlyEvosAttacks:
 	db 16, CURSE
 	db 21, NIGHT_SHADE
 	db 28, CONFUSE_RAY
+	db 30, SHADOW_BALL
 	db 33, DREAM_EATER
 	db 36, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -1262,6 +1267,7 @@ HaunterEvosAttacks:
 	db 16, CURSE
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
+	db 36, SHADOW_BALL
 	db 39, DREAM_EATER
 	db 48, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -1276,6 +1282,7 @@ GengarEvosAttacks:
 	db 16, CURSE
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
+	db 36, SHADOW_BALL
 	db 39, DREAM_EATER
 	db 48, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -2164,6 +2171,7 @@ TotodileEvosAttacks:
 	db 27, SCARY_FACE
 	db 35, SLASH
 	db 43, SCREECH
+	db 48, CROSS_CHOP
 	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2179,6 +2187,7 @@ CroconawEvosAttacks:
 	db 28, SCARY_FACE
 	db 37, SLASH
 	db 45, SCREECH
+	db 50, CROSS_CHOP
 	db 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2194,6 +2203,7 @@ FeraligatrEvosAttacks:
 	db 38, SLASH
 	db 42, ICE_PUNCH
 	db 47, THRASH
+	db 53, CROSS_CHOP
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2400,11 +2410,13 @@ TogeticEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, CHARM
+	db 1, RAZOR_LEAF
 	db 7, METRONOME
 	db 18, SWEET_KISS
 	db 25, ENCORE
 	db 31, MOONLIGHT
 	db 38, DOUBLE_EDGE
+	db 43, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
@@ -2515,6 +2527,7 @@ SudowoodoEvosAttacks:
 	db 19, LOW_KICK
 	db 28, ROCK_SLIDE
 	db 37, FAINT_ATTACK
+	db 41, DOUBLE_EDGE
 	db 46, CROSS_CHOP
 	db 0 ; no more level-up moves
 
@@ -2712,10 +2725,12 @@ MisdreavusEvosAttacks:
 	db 1, PSYWAVE
 	db 6, SPITE
 	db 12, CONFUSE_RAY
-	db 19, MEAN_LOOK
-	db 27, PSYBEAM
-	db 36, PAIN_SPLIT
-	db 46, PERISH_SONG
+	db 16, MEAN_LOOK
+	db 23, PSYBEAM
+	db 31, PAIN_SPLIT
+	db 36, SHADOW_BALL
+	db 44, PERISH_SONG
+	db 51, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
 UnownEvosAttacks:
@@ -2929,6 +2944,7 @@ UrsaringEvosAttacks:
 	db 39, SLASH
 	db 49, SNORE
 	db 59, THRASH
+	db 65, CROSS_CHOP
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:
@@ -3044,9 +3060,12 @@ SkarmoryEvosAttacks:
 	db 1, LEER
 	db 1, PECK
 	db 13, SAND_ATTACK
-	db 19, SWIFT
+	db 15, SWIFT
+	db 19, FURY_ATTACK
 	db 25, AGILITY
+	db 31, SPIKES
 	db 37, STEEL_WING
+	db 44, SLASH
 	db 49, DRILL_PECK
 	db 0 ; no more level-up moves
 
