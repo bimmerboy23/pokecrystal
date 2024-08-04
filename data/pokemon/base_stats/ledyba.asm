@@ -1,6 +1,6 @@
 	db LEDYBA ; 165
 
-	db  40,  40,  30,  55,  20,  80
+	db  40,  20,  30,  55,  40,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, FIGHTING ; type

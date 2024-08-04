@@ -1,6 +1,6 @@
 	db AZUMARILL ; 184
 
-	db 100,  120,  80,  50,  60,  80
+	db 100,  115,  80,  50,  60,  80
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type

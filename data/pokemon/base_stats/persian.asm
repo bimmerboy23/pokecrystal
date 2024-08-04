@@ -1,9 +1,9 @@
 	db PERSIAN ; 053
 
-	db  65,  50,  60, 115,  85,  65
+	db  65,  85,  60, 115,  60,  65
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, DARK ; type
+	db NORMAL, NORMAL ; type
 	db 90 ; catch rate
 	db 148 ; base exp
 	db NO_ITEM, NO_ITEM ; items

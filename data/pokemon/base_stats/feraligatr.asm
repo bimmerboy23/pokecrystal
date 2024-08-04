@@ -1,9 +1,9 @@
 	db FERALIGATR ; 160
 
-	db  89, 115,  92,  64,  85,  85
+	db  90, 110,  92,  70,  85,  83
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db WATER, DARK ; type
 	db 45 ; catch rate
 	db 210 ; base exp
 	db NO_ITEM, NO_ITEM ; items
