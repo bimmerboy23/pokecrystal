@@ -2973,7 +2973,7 @@ CamperGroup:
 
 	; CAMPER (11)
 	db "TED@", TRAINERTYPE_NORMAL
-	db 29, PRIMPEAPE
+	db 29, PRIMEAPE
 	db -1 ; end
 
 	; CAMPER (12)
