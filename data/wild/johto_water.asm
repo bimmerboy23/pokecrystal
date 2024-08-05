@@ -237,7 +237,7 @@ JohtoWaterWildMons:
 	db 6 percent ; encounter rate
 	db 25, KRABBY
 	db 25, STARYU
-	db 30, TENACRUEL
+	db 30, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons ECRUTEAK_CITY

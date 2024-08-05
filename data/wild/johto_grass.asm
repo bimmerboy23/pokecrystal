@@ -1585,7 +1585,7 @@ JohtoGrassWildMons:
 	db 31, PIDGEOTTO
 	db 31, FARFETCH_D
 	db 30, KANGASKHAN
-	db 32, SKARMOERY
+	db 32, SKARMORY
 	db 32, GIRAFARIG
 	db 32, GIRAFARIG
 	; nite
