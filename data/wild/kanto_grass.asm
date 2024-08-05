@@ -117,57 +117,57 @@ KantoGrassWildMons:
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 44, GRAVELER
-	db 42, RHYHORN
-	db 43, ONIX
-	db 44, GOLBAT
-	db 45, SANDSLASH
-	db 45, RHYDON
-	db 45, RHYDON
+	db 42, GRAVELER
+	db 40, RHYHORN
+	db 41, ONIX
+	db 42, GOLBAT
+	db 43, SANDSLASH
+	db 43, RHYDON
+	db 43, RHYDON
 	; day
-	db 44, GRAVELER
-	db 42, RHYHORN
-	db 43, ONIX
-	db 44, GOLBAT
-	db 45, SANDSLASH
-	db 45, RHYDON
-	db 45, RHYDON
+	db 42, GRAVELER
+	db 40, RHYHORN
+	db 41, ONIX
+	db 42, GOLBAT
+	db 43, SANDSLASH
+	db 43, RHYDON
+	db 43, RHYDON
 	; nite
-	db 44, GOLBAT
+	db 42, GOLBAT
+	db 42, GRAVELER
+	db 40, ONIX
 	db 44, GRAVELER
-	db 42, ONIX
-	db 46, GRAVELER
 	db 48, GRAVELER
-	db 50, GRAVELER
-	db 50, GRAVELER
+	db 48, GRAVELER
+	db 48, GRAVELER
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 42, ZUBAT
-	db 42, RATICATE
-	db 44, GOLBAT
-	db 41, SLOWPOKE
+	db 38, ZUBAT
+	db 38, RATICATE
+	db 40, GOLBAT
+	db 40, SLOWPOKE
 	db 40, RATTATA
-	db 43, SLOWPOKE
-	db 43, SLOWPOKE
+	db 40, SLOWPOKE
+	db 40, SLOWPOKE
 	; day
-	db 42, ZUBAT
-	db 42, RATICATE
-	db 44, GOLBAT
-	db 41, SLOWPOKE
+	db 38, ZUBAT
+	db 38, RATICATE
+	db 40, GOLBAT
+	db 40, SLOWPOKE
 	db 40, RATTATA
-	db 43, SLOWPOKE
-	db 43, SLOWPOKE
+	db 40, SLOWPOKE
+	db 40, SLOWPOKE
 	; nite
-	db 42, ZUBAT
-	db 42, RATICATE
-	db 44, GOLBAT
-	db 41, SLOWPOKE
+	db 38, ZUBAT
+	db 38, RATICATE
+	db 40, GOLBAT
+	db 40, SLOWPOKE
 	db 40, RATTATA
-	db 43, SLOWPOKE
-	db 43, SLOWPOKE
+	db 40, SLOWPOKE
+	db 40, SLOWPOKE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1

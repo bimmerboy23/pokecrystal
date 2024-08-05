@@ -14,13 +14,14 @@ BulbasaurEggMoves:
 	db LIGHT_SCREEN
 	db SKULL_BASH
 	db SAFEGUARD
-	db RAZOR_WIND
 	db PETAL_DANCE
+	db CURSE
 	db -1 ; end
 
 CharmanderEggMoves:
 	db BELLY_DRUM
 	db ANCIENTPOWER
+	db METAL_CLAW
 	db ROCK_SLIDE
 	db BITE
 	db OUTRAGE
@@ -40,6 +41,7 @@ PidgeyEggMoves:
 	db PURSUIT
 	db FAINT_ATTACK
 	db FORESIGHT
+	db STEEL_WING
 	db -1 ; end
 
 RattataEggMoves:
@@ -148,6 +150,7 @@ MeowthEggMoves:
 	db CHARM
 	db HYPNOSIS
 	db AMNESIA
+	db BATON_PASS
 	db -1 ; end
 
 PsyduckEggMoves:
@@ -190,6 +193,7 @@ AbraEggMoves:
 	db LIGHT_SCREEN
 	db ENCORE
 	db BARRIER
+	db CONFUSION
 	db -1 ; end
 
 MachopEggMoves:
@@ -197,6 +201,7 @@ MachopEggMoves:
 	db MEDITATE
 	db ROLLING_KICK
 	db ENCORE
+	db ROCK_SLIDE
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -398,6 +403,7 @@ ScytherEggMoves:
 PinsirEggMoves:
 	db FURY_ATTACK
 	db FLAIL
+	db RAZOR_WIND
 	db -1 ; end
 
 LaprasEggMoves:
@@ -444,17 +450,17 @@ DratiniEggMoves:
 	db -1 ; end
 
 ChikoritaEggMoves:
-	db VINE_WHIP
+	db OUTRAGE
 	db LEECH_SEED
 	db COUNTER
 	db ANCIENTPOWER
-	db FLAIL
+	db AMNESIA
 	db SWORDS_DANCE
 	db -1 ; end
 
 CyndaquilEggMoves:
 	db FURY_SWIPES
-	db QUICK_ATTACK
+	db MAGNITUDE
 	db REVERSAL
 	db THRASH
 	db FORESIGHT
