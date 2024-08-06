@@ -35,6 +35,7 @@ SquirtleEggMoves:
 	db CONFUSION
 	db FORESIGHT
 	db FLAIL
+	db MACH_PUNCH
 	db -1 ; end
 
 PidgeyEggMoves:
@@ -75,6 +76,7 @@ SandshrewEggMoves:
 	db COUNTER
 	db RAPID_SPIN
 	db METAL_CLAW
+	db MACH_PUNCH
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -162,6 +164,7 @@ PsyduckEggMoves:
 	db FUTURE_SIGHT
 	db PSYCHIC_M
 	db CROSS_CHOP
+	db METAL_CLAW
 	db -1 ; end
 
 MankeyEggMoves:
@@ -171,6 +174,7 @@ MankeyEggMoves:
 	db COUNTER
 	db REVERSAL
 	db BEAT_UP
+	db MACH_PUNCH
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -202,6 +206,7 @@ MachopEggMoves:
 	db ROLLING_KICK
 	db ENCORE
 	db ROCK_SLIDE
+	db MACH_PUNCH
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -247,6 +252,7 @@ FarfetchDEggMoves:
 	db GUST
 	db QUICK_ATTACK
 	db FLAIL
+	db KARATE_CHOP
 	db -1 ; end
 
 DoduoEggMoves:
@@ -327,6 +333,7 @@ LickitungEggMoves:
 	db BELLY_DRUM
 	db MAGNITUDE
 	db BODY_SLAM
+	db MACH_PUNCH
 	db -1 ; end
 
 KoffingEggMoves:
@@ -474,6 +481,8 @@ TotodileEggMoves:
 	db ANCIENTPOWER
 	db RAZOR_WIND
 	db ROCK_SLIDE
+	db MACH_PUNCH
+	db METAL_CLAW
 	db -1 ; end
 
 SentretEggMoves:
@@ -519,6 +528,7 @@ PichuEggMoves:
 	db PRESENT
 	db ENCORE
 	db DOUBLESLAP
+	db MACH_PUNCH
 	db -1 ; end
 
 CleffaEggMoves:
@@ -571,6 +581,7 @@ MarillEggMoves:
 	db PERISH_SONG
 	db SUPERSONIC
 	db FORESIGHT
+	db MACH_PUNCH
 	db -1 ; end
 
 SudowoodoEggMoves:
@@ -664,6 +675,7 @@ SnubbullEggMoves:
 	db HEAL_BELL
 	db LICK
 	db LEER
+	db MACH_PUNCH
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -686,6 +698,7 @@ HeracrossEggMoves:
 SneaselEggMoves:
 	db COUNTER
 	db SPITE
+	db MACH_PUNCH
 	db FORESIGHT
 	db REFLECT
 	db BITE
@@ -693,6 +706,7 @@ SneaselEggMoves:
 
 TeddiursaEggMoves:
 	db CRUNCH
+	db MACH_PUNCH
 	db TAKE_DOWN
 	db SEISMIC_TOSS
 	db FOCUS_ENERGY
@@ -808,6 +822,7 @@ MiltankEggMoves:
 	db PRESENT
 	db REVERSAL
 	db SEISMIC_TOSS
+	db MACH_PUNCH
 	db -1 ; end
 
 LarvitarEggMoves:
