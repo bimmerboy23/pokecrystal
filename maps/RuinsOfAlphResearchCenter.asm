@@ -131,23 +131,6 @@ RuinsOfAlphResearchCenterScientist2Script:
 	closetext
 	end
 
-RuinsOfAlphResearchCenterComputer:
-	opentext
-	checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
-	iftrue .SkipChecking
-	readvar VAR_UNOWNCOUNT
-	ifequal NUM_UNOWN, .GotAllUnown
-.SkipChecking:
-	writetext RuinsOfAlphResearchCenterComputerText
-	waitbutton
-	closetext
-	end
-
-.GotAllUnown:
-	writetext RuinsOfAlphResearchCenterComputerText_GotAllUnown
-	waitbutton
-	closetext
-	end
 
 FossilScientist:
 	faceplayer
@@ -295,6 +278,24 @@ FossilScientist:
 	db "DOME FOSSIL@"
 	db "HELIX FOSSIL@"
 	db "CANCEL@"
+
+RuinsOfAlphResearchCenterComputer:
+	opentext
+	checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
+	iftrue .SkipChecking
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .GotAllUnown
+.SkipChecking:
+	writetext RuinsOfAlphResearchCenterComputerText
+	waitbutton
+	closetext
+	end
+
+.GotAllUnown:
+	writetext RuinsOfAlphResearchCenterComputerText_GotAllUnown
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphResearchCenterPrinter:
 	opentext
@@ -454,7 +455,7 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 	cont "kinds of themâ€¦"
 	done
 
-FossilScientistIntroText:
+RuinsOfAlphResearchCenterScientist4IntroText:
 	text "Hiya!"
 
 	para "I am important"
@@ -628,4 +629,4 @@ RuinsOfAlphResearchCenter_MapEvents:
 	object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1
 	object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist2Script, -1
 	object_event  2,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist3Script, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
-	object_event  0,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterFossilScientistScript, -1
+	object_event  0,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist4Script, -1
