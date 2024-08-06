@@ -6204,7 +6204,7 @@ LoadEnemyMon:
 	jr nz, .Happiness
 ; 40% chance of not flooring
 	call Random
-	cp 39 percent  1
+	cp 39 percent + 1
 	jr c, .Happiness
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
@@ -6223,7 +6223,7 @@ LoadEnemyMon:
 ; Fill stats
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
-	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP  1)
+	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP + 1)
 	ld a, [wBattleMode]
 	cp TRAINER_BATTLE
 	jr nz, .no_stat_exp

@@ -237,7 +237,7 @@ endr
 	push hl
 	push bc
 	dec a
-	ld hl, Moves  MOVE_PP
+	ld hl, Moves + MOVE_PP
 	ld bc, MOVE_LENGTH
 	call AddNTimes
 	ld a, BANK(Moves)
