@@ -1394,16 +1394,16 @@ BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, CheckTypeMatchup
+	jr z, .get_type
 	ld hl, wBattleMonType1
+.get_type
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
 	; fallthrough
 CheckTypeMatchup:
-; BUG: AI makes a false assumption about CheckTypeMatchup (see docs/bugs_and_glitches.md)
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -2500,21 +2500,24 @@ DittoMetalPowder:
 	pop bc
 	ret nz
 
-; BUG: Metal Powder can increase damage taken with boosted (Special) Defense (see docs/bugs_and_glitches.md)
-	ld a, c
-	srl a
-	add c
-	ld c, a
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	add hl, bc
+	ld b, h
+	ld c, l
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp b
+	jr c, .cap
+	ret nz
+	ld a, LOW(MAX_STAT_VALUE)
+	cp c
 	ret nc
 
-	srl b
-	ld a, b
-	and a
-	jr nz, .done
-	inc b
-.done
-	scf
-	rr c
+.cap
+	ld bc, MAX_STAT_VALUE
 	ret
 
 BattleCommand_DamageStats:
@@ -2596,11 +2599,13 @@ PlayerAttackDamage:
 	call ThickClubBoost
 
 .done
+	push hl
+	call DittoMetalPowder
+	pop hl
 	call TruncateHL_BC
 
 	ld a, [wBattleMonLevel]
 	ld e, a
-	call DittoMetalPowder
 
 	ld a, 1
 	and a
@@ -2637,10 +2642,6 @@ TruncateHL_BC:
 	inc l
 
 .finish
-; BUG: Reflect and Light Screen can make (Special) Defense wrap around above 1024 (see docs/bugs_and_glitches.md)
-	ld a, [wLinkMode]
-	cp LINK_COLOSSEUM
-	jr z, .done
 ; If we go back to the loop point,
 ; it's the same as doing this exact
 ; same check twice.
@@ -2648,7 +2649,6 @@ TruncateHL_BC:
 	or b
 	jr nz, .loop
 
-.done
 	ld b, l
 	ret
 
@@ -2764,9 +2764,19 @@ SpeciesItemBoost:
 	ret nz
 
 ; Double the stat
-; BUG: Thick Club and Light Ball can make (Special) Attack wrap around above 1024 (see docs/bugs_and_glitches.md)
 	sla l
 	rl h
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp h
+	jr c, .cap
+	ret nz
+	ld a, LOW(MAX_STAT_VALUE)
+	cp l
+	ret nc
+
+.cap
+	ld hl, MAX_STAT_VALUE
 	ret
 
 EnemyAttackDamage:
@@ -2837,11 +2847,14 @@ EnemyAttackDamage:
 	call ThickClubBoost
 
 .done
+	push hl
+	call DittoMetalPowder
+	pop hl
+
 	call TruncateHL_BC
 
 	ld a, [wEnemyMonLevel]
 	ld e, a
-	call DittoMetalPowder
 
 	ld a, 1
 	and a
@@ -3590,9 +3603,7 @@ BattleCommand_SleepTarget:
 	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
-	call .CheckAIRandomFail
-	jr c, .fail
-
+	
 	ld a, [de]
 	and a
 	jr nz, .fail
@@ -3632,34 +3643,6 @@ BattleCommand_SleepTarget:
 	pop hl
 	jp StdBattleTextbox
 
-.CheckAIRandomFail:
-	; Enemy turn
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_fail
-
-	; Not in link battle
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_fail
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_fail
-
-	; Not locked-on by the enemy
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_fail
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	ret c
-
-.dont_fail
-	xor a
-	ret
-
 BattleCommand_PoisonTarget:
 	call CheckSubstituteOpp
 	ret nz
@@ -3670,7 +3653,11 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckIfTargetIsPoisonType
+	ld a, POISON ; Don't poison a Poison-type
+	call CheckIfTargetIsGivenType
+	ret z
+	ld a, STEEL ; Don't poison a Steel-type
+	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -3699,7 +3686,12 @@ BattleCommand_Poison:
 	and $7f
 	jp z, .failed
 
-	call CheckIfTargetIsPoisonType
+	ld a, POISON
+	call CheckIfTargetIsGivenType
+	jp z, .failed
+
+	ld a, STEEL
+	call CheckIfTargetIsGivenType
 	jp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -3726,27 +3718,6 @@ BattleCommand_Poison:
 	and a
 	jr nz, .failed
 
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	call CheckSubstituteOpp
 	jr nz, .failed
 	ld a, [wAttackMissed]
@@ -3798,7 +3769,8 @@ BattleCommand_Poison:
 	cp EFFECT_TOXIC
 	ret
 
-CheckIfTargetIsPoisonType:
+CheckIfTargetIsGivenType:
+	ld b, a
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -3807,10 +3779,10 @@ CheckIfTargetIsPoisonType:
 .ok
 	ld a, [de]
 	inc de
-	cp POISON
+	cp b
 	ret z
 	ld a, [de]
-	cp POISON
+	cp b
 	ret
 
 PoisonOpponent:
@@ -3934,7 +3906,8 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	ld a, FIRE ; Don't burn a Fire-type
+	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -4001,7 +3974,8 @@ BattleCommand_FreezeTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	ld a, ICE ; Don't freeze an Ice-type
+	call CheckIfTargetIsGivenType
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -4338,41 +4312,12 @@ BattleCommand_StatDown:
 ; Sharply lower the stat if applicable.
 	ld a, [wLoweredStat]
 	and $f0
-	jr z, .ComputerMiss
+	jr z, .GotAmountToLower
 	dec b
-	jr nz, .ComputerMiss
+	jr nz, .GotAmountToLower
 	inc b
 
-.ComputerMiss:
-; Computer opponents have a 25% chance of failing.
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .DidntMiss
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .DidntMiss
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .DidntMiss
-
-; Lock-On still always works.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .DidntMiss
-
-; Attacking moves that also lower accuracy are unaffected.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_ACCURACY_DOWN_HIT
-	jr z, .DidntMiss
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .Failed
-
-.DidntMiss:
+.GotAmountToLower
 	call CheckSubstituteOpp
 	jr nz, .Failed
 
@@ -5840,27 +5785,7 @@ BattleCommand_Paralyze:
 	jp StdBattleTextbox
 
 .no_item_protection
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
 
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -5897,41 +5822,6 @@ BattleCommand_Paralyze:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
-
-CheckMoveTypeMatchesTarget:
-; Compare move type to opponent type.
-; Return z if matching the opponent type,
-; unless the move is Normal (Tri Attack).
-
-	push hl
-
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wBattleMonType1
-.ok
-
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	cp NORMAL
-	jr z, .normal
-
-	cp [hl]
-	jr z, .return
-
-	inc hl
-	cp [hl]
-
-.return
-	pop hl
-	ret
-
-.normal
-	ld a, 1
-	and a
-	pop hl
-	ret
 
 INCLUDE "engine/battle/move_effects/substitute.asm"
 

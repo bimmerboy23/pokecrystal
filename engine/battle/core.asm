@@ -5765,8 +5765,7 @@ CheckPlayerHasUsableMoves:
 	jr .loop
 
 .done
-; BUG: A Disabled but PP Up–enhanced move may not trigger Struggle (see docs/bugs_and_glitches.md)
-	and a
+	and PP_MASK
 	ret nz
 
 .force_struggle
@@ -6053,16 +6052,20 @@ LoadEnemyMon:
 	jp .Happiness
 
 .InitDVs:
-; Trainer DVs
-
-; All trainers have preset DVs, determined by class
-; See GetTrainerDVs for more on that
-	farcall GetTrainerDVs
-; These are the DVs we'll use if we're actually in a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .UpdateDVs
+	jr z, .WildDVs
 
+; Trainer DVs
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1DVs
+	call GetPartyLocation
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	jr .UpdateDVs
+
+.WildDVs:
 ; Wild DVs
 ; Here's where the fun starts
 
@@ -6165,14 +6168,13 @@ LoadEnemyMon:
 	jr nz, .Happiness
 
 ; Get Magikarp's length
-; BUG: Magikarp length limits have a unit conversion error (see docs/bugs_and_glitches.md)
 	ld de, wEnemyMonDVs
 	ld bc, wPlayerID
 	callfar CalcMagikarpLength
 
 ; No reason to keep going if length > 1536 mm (i.e. if HIGH(length) > 6 feet)
 	ld a, [wMagikarpLength]
-	cp HIGH(1536)
+	cp 5
 	jr nz, .CheckMagikarpArea
 
 ; 5% chance of skipping both size checks
@@ -6181,7 +6183,7 @@ LoadEnemyMon:
 	jr c, .CheckMagikarpArea
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
-	cp LOW(1616)
+	cp 4
 	jr nc, .GenerateDVs
 
 ; 20% chance of skipping this check
@@ -6190,24 +6192,23 @@ LoadEnemyMon:
 	jr c, .CheckMagikarpArea
 ; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
 	ld a, [wMagikarpLength + 1]
-	cp LOW(1600)
+	cp 3
 	jr nc, .GenerateDVs
 
 .CheckMagikarpArea:
-; BUG: Magikarp in Lake of Rage are shorter, not longer (see docs/bugs_and_glitches.md)
 	ld a, [wMapGroup]
 	cp GROUP_LAKE_OF_RAGE
-	jr z, .Happiness
+	jr nz, .Happiness
 	ld a, [wMapNumber]
 	cp MAP_LAKE_OF_RAGE
-	jr z, .Happiness
+	jr nz, .Happiness
 ; 40% chance of not flooring
 	call Random
-	cp 39 percent + 1
+	cp 39 percent  1
 	jr c, .Happiness
 ; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
 	ld a, [wMagikarpLength]
-	cp HIGH(1024)
+	cp 3
 	jr c, .GenerateDVs ; try again
 
 ; Finally done with DVs
@@ -6222,7 +6223,15 @@ LoadEnemyMon:
 ; Fill stats
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
-	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP + 1)
+	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP  1)
+	ld a, [wBattleMode]
+	cp TRAINER_BATTLE
+	jr nz, .no_stat_exp
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1StatExp - 1
+	call GetPartyLocation
+	ld b, TRUE
+.no_stat_exp
 	predef CalcMonStats
 
 ; If we're in a trainer battle,
@@ -6409,7 +6418,7 @@ LoadEnemyMon:
 	ld bc, NUM_BATTLE_STATS * 2
 	call CopyBytes
 
-; BUG: PRZ and BRN stat reductions don't apply to switched Pokémon (see docs/bugs_and_glitches.md)
+	call ApplyStatysEffectOnEnemyStats
 	ret
 
 CheckSleepingTreeMon:
