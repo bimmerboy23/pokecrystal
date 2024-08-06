@@ -448,11 +448,11 @@ RuinsOfAlphResearchCenterScientist2Text_UnownAppeared:
 	para "drawings on the"
 	line "walls there."
 
-	para "Hmmâ€¦"
+	para "Hmm..."
 
 	para "That must mean"
 	line "there are many"
-	cont "kinds of themâ€¦"
+	cont "kinds of them.."
 	done
 
 RuinsOfAlphResearchCenterScientist4IntroText:
@@ -543,7 +543,7 @@ RuinsOfAlphResearchCenterUnusedText1: ; unreferenced
 
 RuinsOfAlphResearchCenterUnusedText2: ; unreferenced
 	text "According to my"
-	line "researchâ€¦"
+	line "research..."
 
 	para "Those mysterious"
 	line "patterns appeared"
@@ -555,7 +555,7 @@ RuinsOfAlphResearchCenterUnusedText2: ; unreferenced
 	line "radio waves have"
 
 	para "some sort of a"
-	line "linkâ€¦"
+	line "link..."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
@@ -566,7 +566,7 @@ RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
 	line "now?"
 
 	para "The mystery"
-	line "deepensâ€¦"
+	line "deepens..."
 	done
 
 RuinsOfAlphResearchCenterComputerText:
@@ -606,9 +606,9 @@ RuinsOfAlphResearchCenterAcademicBooksText:
 	text "There are many"
 	line "academic books."
 
-	para "Ancient Ruinsâ€¦"
+	para "Ancient Ruins.."
 	line "Mysteries of the"
-	cont "Ancientsâ€¦"
+	cont "Ancients..."
 	done
 
 RuinsOfAlphResearchCenter_MapEvents:
