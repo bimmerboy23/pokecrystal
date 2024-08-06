@@ -834,7 +834,7 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_LEVEL, 36, POLITOED
+	db EVOLVE_HELD, KINGS_ROCK, POLITOED
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, HYPNOSIS
@@ -1091,7 +1091,7 @@ RapidashEvosAttacks:
 
 SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 37, SLOWBRO
-	db EVOLVE_ITEM, WATER_STONE, SLOWKING
+	db EVOLVE_HELD, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -1320,7 +1320,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	db EVOLVE_LEVEL, 30, STEELIX
+	db EVOLVE_HELD, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
@@ -1645,7 +1645,7 @@ HorseaEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
-	db EVOLVE_LEVEL, 42, KINGDRA
+	db EVOLVE_HELD, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, SMOKESCREEN
@@ -1732,7 +1732,7 @@ MrMimeEvosAttacks:
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
-	db EVOLVE_LEVEL, 30, SCIZOR
+	db EVOLVE_HELD, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -1928,7 +1928,7 @@ FlareonEvosAttacks:
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
-	db EVOLVE_TRADE, UP_GRADE, PORYGON2
+	db EVOLVE_HELD, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
 	db 1, CONVERSION2
 	db 1, TACKLE
@@ -2951,6 +2951,7 @@ QwilfishEvosAttacks:
 	db 28, PIN_MISSILE
 	db 32, SLUDGE
 	db 37, TAKE_DOWN
+	db 41, TWINEEDLE
 	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2985,9 +2986,9 @@ HeracrossEvosAttacks:
 	db 1, LEER
 	db 6, HORN_ATTACK
 	db 12, ENDURE
-	db 17, ROCK_SMASH
+	db 17, KARATE_CHOP
 	db 19, FURY_ATTACK
-	db 25, KARATE_CHOP
+	db 25, ROCK_SMASH
 	db 30, PIN_MISSILE
 	db 35, TAKE_DOWN
 	db 44, REVERSAL
