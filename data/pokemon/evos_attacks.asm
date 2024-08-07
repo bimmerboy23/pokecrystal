@@ -2628,6 +2628,7 @@ HoppipEvosAttacks:
 	db 1, SPLASH
 	db 5, SYNTHESIS
 	db 5, TAIL_WHIP
+	db 5, ABSORB
 	db 10, TACKLE
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2644,6 +2645,7 @@ SkiploomEvosAttacks:
 	db 1, SYNTHESIS
 	db 1, TAIL_WHIP
 	db 1, TACKLE
+	db 1, ABSORB
 	db 5, POISONPOWDER
 	db 5, STUN_SPORE
 	db 10, SLEEP_POWDER
