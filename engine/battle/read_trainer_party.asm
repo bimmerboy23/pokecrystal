@@ -58,7 +58,6 @@ ReadTrainerParty:
 	ld [wOtherTrainerType], a
 	ld d, h
 	ld e, l
-	jp hl
 	call ReadTrainerPartyPieces
 
 .done
