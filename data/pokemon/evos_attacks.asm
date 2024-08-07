@@ -91,7 +91,6 @@ CharmeleonEvosAttacks:
 	db 1, SCRATCH
 	db 1, GROWL
 	db 1, EMBER
-	db 7, EMBER
 	db 10, SMOKESCREEN
 	db 15, RAGE
 	db 23, FIRE_PUNCH
@@ -107,8 +106,6 @@ CharizardEvosAttacks:
 	db 1, GROWL
 	db 1, EMBER
 	db 1, SMOKESCREEN
-	db 7, EMBER
-	db 10, SMOKESCREEN
 	db 15, RAGE
 	db 23, FIRE_PUNCH
 	db 31, SLASH
@@ -142,8 +139,6 @@ WartortleEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 1, BUBBLE
-	db 4, TAIL_WHIP
-	db 7, BUBBLE
 	db 10, WITHDRAW
 	db 13, WATER_GUN
 	db 19, BITE
@@ -162,9 +157,6 @@ BlastoiseEvosAttacks:
 	db 1, TAIL_WHIP
 	db 1, BUBBLE
 	db 1, WITHDRAW
-	db 4, TAIL_WHIP
-	db 7, BUBBLE
-	db 10, WITHDRAW
 	db 13, WATER_GUN
 	db 19, BITE
 	db 25, RAPID_SPIN
@@ -251,8 +243,6 @@ PidgeottoEvosAttacks:
 	db 1, TACKLE
 	db 1, SAND_ATTACK
 	db 1, GUST
-	db 5, SAND_ATTACK
-	db 9, GUST
 	db 13, QUICK_ATTACK
 	db 23, TWISTER
 	db 27, WING_ATTACK
@@ -319,8 +309,6 @@ FearowEvosAttacks:
 	db 1, GROWL
 	db 1, LEER
 	db 1, FURY_ATTACK
-	db 7, LEER
-	db 13, FURY_ATTACK
 	db 25, PURSUIT
 	db 28, WING_ATTACK
 	db 32, MIRROR_MOVE
@@ -348,8 +336,6 @@ ArbokEvosAttacks:
 	db 1, LEER
 	db 1, POISON_STING
 	db 1, BITE
-	db 9, POISON_STING
-	db 12, BITE
 	db 15, GLARE
 	db 21, ACID
 	db 28, SCREECH
@@ -402,8 +388,6 @@ SandslashEvosAttacks:
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
 	db 1, SAND_ATTACK
-	db 6, DEFENSE_CURL
-	db 11, SAND_ATTACK
 	db 13, POISON_STING
 	db 23, SLASH
 	db 25, SWIFT
@@ -572,7 +556,6 @@ GolbatEvosAttacks:
 	db 1, SCREECH
 	db 1, LEECH_LIFE
 	db 1, SUPERSONIC
-	db 6, SUPERSONIC
 	db 12, BITE
 	db 19, CONFUSE_RAY
 	db 27, WING_ATTACK
@@ -601,8 +584,6 @@ GloomEvosAttacks:
 	db 1, ABSORB
 	db 1, SWEET_SCENT
 	db 1, POISONPOWDER
-	db 7, SWEET_SCENT
-	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
 	db 18, ACID
@@ -637,8 +618,6 @@ ParasectEvosAttacks:
 	db 1, SCRATCH
 	db 1, STUN_SPORE
 	db 1, POISONPOWDER
-	db 7, STUN_SPORE
-	db 10, POISONPOWDER
 	db 13, LEECH_LIFE
 	db 20, SPORE
 	db 27, SLASH
@@ -668,7 +647,6 @@ VenomothEvosAttacks:
 	db 1, DISABLE
 	db 1, FORESIGHT
 	db 1, SUPERSONIC
-	db 9, SUPERSONIC
 	db 12, CONFUSION
 	db 18, POISONPOWDER
 	db 22, LEECH_LIFE
@@ -699,8 +677,6 @@ DugtrioEvosAttacks:
 	db 1, SCRATCH
 	db 1, GROWL
 	db 1, MAGNITUDE
-	db 5, GROWL
-	db 9, MAGNITUDE
 	db 15, DIG
 	db 20, SAND_ATTACK
 	db 25, SLASH
@@ -726,7 +702,6 @@ PersianEvosAttacks:
 	db 1, SCRATCH
 	db 1, GROWL
 	db 1, BITE
-	db 11, BITE
 	db 20, PAY_DAY
 	db 25, FAINT_ATTACK
 	db 32, SCREECH
@@ -754,7 +729,6 @@ GolduckEvosAttacks:
 	db 1, TAIL_WHIP
 	db 1, DISABLE
 	db 1, CONFUSION
-	db 5, TAIL_WHIP
 	db 9, WATER_GUN
 	db 10, DISABLE
 	db 16, CONFUSION
@@ -785,7 +759,6 @@ PrimeapeEvosAttacks:
 	db 1, LEER
 	db 1, LOW_KICK
 	db 1, RAGE
-	db 9, LOW_KICK
 	db 15, KARATE_CHOP
 	db 17, FURY_SWIPES
 	db 20, FOCUS_ENERGY
@@ -806,7 +779,7 @@ GrowlitheEvosAttacks:
 	db 20, TAKE_DOWN
 	db 25, FLAME_WHEEL
 	db 31, AGILITY
-	db 39, FLAMETHROWER
+	db 37, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 ArcanineEvosAttacks:
@@ -839,8 +812,6 @@ PoliwhirlEvosAttacks:
 	db 1, BUBBLE
 	db 1, HYPNOSIS
 	db 1, WATER_GUN
-	db 7, HYPNOSIS
-	db 13, WATER_GUN
 	db 19, DOUBLESLAP
 	db 22, BUBBLEBEAM
 	db 27, RAIN_DANCE
@@ -915,7 +886,6 @@ MachokeEvosAttacks:
 	db 1, LOW_KICK
 	db 1, LEER
 	db 1, FOCUS_ENERGY
-	db 8, FOCUS_ENERGY
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 23, FORESIGHT
@@ -930,7 +900,6 @@ MachampEvosAttacks:
 	db 1, LOW_KICK
 	db 1, LEER
 	db 1, FOCUS_ENERGY
-	db 8, FOCUS_ENERGY
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 23, FORESIGHT
@@ -1140,9 +1109,6 @@ MagnetonEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 1, SUPERSONIC
 	db 1, SONICBOOM
-	db 6, THUNDERSHOCK
-	db 11, SUPERSONIC
-	db 16, SONICBOOM
 	db 21, THUNDER_WAVE
 	db 27, LOCK_ON
 	db 30, SPARK
@@ -2191,7 +2157,7 @@ MeganiumEvosAttacks:
 	db 22, SYNTHESIS
 	db 32, PETAL_DANCE
 	db 38, LIGHT_SCREEN
-	db 40, ANCIENTPOWER
+	db 42, ANCIENTPOWER
 	db 46, SWORDS_DANCE
 	db 50, SAFEGUARD
 	db 55, SOLARBEAM
@@ -2205,6 +2171,7 @@ CyndaquilEvosAttacks:
 	db 6, SMOKESCREEN
 	db 12, EMBER
 	db 17, QUICK_ATTACK
+	db 20, DIG
 	db 24, FLAME_WHEEL
 	db 32, SWIFT
 	db 42, FLAMETHROWER
@@ -2219,6 +2186,7 @@ QuilavaEvosAttacks:
 	db 6, SMOKESCREEN
 	db 12, EMBER
 	db 20, QUICK_ATTACK
+	db 23, DIG
 	db 26, FLAME_WHEEL
 	db 38, SWIFT
 	db 45, FLAMETHROWER
@@ -2231,10 +2199,11 @@ TyphlosionEvosAttacks:
 	db 1, SMOKESCREEN
 	db 1, EMBER
 	db 6, QUICK_ATTACK
+	db 6, DIG
 	db 12, FLAME_WHEEL
-	db 36, DIG
-	db 41, SWIFT
-	db 49, FLAMETHROWER
+	db 36, SWIFT
+	db 42, EARTHQUAKE
+	db 51, FLAMETHROWER
 	db 55, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
