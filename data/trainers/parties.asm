@@ -62,19 +62,19 @@ ChuckGroup:
 	; CHUCK (1)
 	db "CHUCK@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
 	db 32, PRIMEAPE
-		db $b9 $d8 ; atk|def, spd|spc
+		db $b9, $d8 ; atk|def, spd|spc
 		dw $0000, $6400, $0000, $6400, $0000 ; hp, atk, def, spd, spc
-		SCOPE_LENS
+		db SCOPE_LENS
 		db HEADBUTT, DOUBLE_TEAM, KARATE_CHOP, ROCK_SLIDE
 	db 33, HITMONTOP
-		db $a9 $ab ; atk|def, spd|spc
+		db $a9, $ab ; atk|def, spd|spc
 		dw $6400, $6400, $0000, $0000, $0000 ; hp, atk, def, spd, spc
-		NO_ITEM
+		db NO_ITEM
 		db ROLLING_KICK, DIG, CURSE, PURSUIT
 	db 35, POLIWRATH
-		db $aa $9e ; atk|def, spd|spc
+		db $aa, $9e ; atk|def, spd|spc
 		dw $0000, $6400, $0000, $0000, $6400 ; hp, atk, def, spd, spc
-		MYSTIC_WATER
+		db MYSTIC_WATER
 		db HYPNOSIS, MIND_READER, SURF, DYNAMICPUNCH
 	db -1 ; end
 
