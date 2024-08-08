@@ -1,6 +1,6 @@
 	db YANMA ; 193
 
-	db  65,  80,  55,  95,  80,  55
+	db  65,  85,  55,  95,  85,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, GRASS ; type

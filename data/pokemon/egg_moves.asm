@@ -276,6 +276,8 @@ GrimerEggMoves:
 	db HAZE
 	db MEAN_LOOK
 	db LICK
+	db ROCK_SLIDE
+	db CURSE
 	db -1 ; end
 
 ShellderEggMoves:
@@ -514,6 +516,7 @@ SpinarakEggMoves:
 	db SONICBOOM
 	db BATON_PASS
 	db PURSUIT
+	db MEGAHORN
 	db -1 ; end
 
 ChinchouEggMoves:

@@ -2366,8 +2366,8 @@ AriadosEvosAttacks:
 	db 30, SLUDGE_BOMB
 	db 34, FURY_SWIPES
 	db 43, SPIDER_WEB
-	db 53, AGILITY
-	db 63, PSYCHIC_M
+	db 52, AGILITY
+	db 61, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
@@ -3122,9 +3122,10 @@ SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEER
 	db 1, PECK
-	db 13, SAND_ATTACK
-	db 15, SWIFT
-	db 19, FURY_ATTACK
+	db 8, SAND_ATTACK
+	db 12, SWIFT
+	db 15, FURY_ATTACK
+	db 21, WING_ATTACK
 	db 25, AGILITY
 	db 31, SPIKES
 	db 37, STEEL_WING
