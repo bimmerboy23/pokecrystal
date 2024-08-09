@@ -410,6 +410,8 @@ Route30_MapEvents:
 	def_warp_events
 	warp_event  7, 39, ROUTE_30_BERRY_HOUSE, 1
 	warp_event 17,  5, MR_POKEMONS_HOUSE, 1
+	warp_event  7, 51, ROUTE_30_CHERRYGROVE_GATE, 1
+	warp_event  8, 51, ROUTE_30_CHERRYGROVE_GATE, 1
 
 	def_coord_events
 

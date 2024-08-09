@@ -374,6 +374,7 @@ INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
 INCLUDE "maps/Route30BerryHouse.asm"
 INCLUDE "maps/MrPokemonsHouse.asm"
 INCLUDE "maps/Route31VioletGate.asm"
+INLCUDE "maps/Route30CherrygroveGate.asm"
 
 
 SECTION "Map Scripts 19", ROMX
