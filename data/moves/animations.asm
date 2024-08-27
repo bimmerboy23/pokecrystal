@@ -254,8 +254,8 @@ BattleAnimations::
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
 	dw BattleAnim_NastyPlot
+	dw BattleAnim_FlashCannon
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_Dummy
 	dw BattleAnim_Dummy
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
@@ -3303,6 +3303,7 @@ BattleAnim_Conversion:
 	anim_wait 128
 	anim_ret
 
+BattleAnim_FlashCannon:
 BattleAnim_Aeroblast:
 	anim_2gfx BATTLE_ANIM_GFX_BEAM, BATTLE_ANIM_GFX_AEROBLAST
 	anim_bgp $1b

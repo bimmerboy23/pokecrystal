@@ -60,6 +60,7 @@ SpearowEggMoves:
 	db SCARY_FACE
 	db QUICK_ATTACK
 	db TRI_ATTACK
+	db RAZOR_WIND
 	db -1 ; end
 
 EkansEggMoves:
@@ -183,6 +184,7 @@ GrowlitheEggMoves:
 	db CRUNCH
 	db THRASH
 	db FIRE_SPIN
+	db RAZOR_WIND
 	db -1 ; end
 
 PoliwagEggMoves:
@@ -237,6 +239,7 @@ PonytaEggMoves:
 	db HYPNOSIS
 	db CHARM
 	db QUICK_ATTACK
+	db RAZOR_WIND
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -261,6 +264,7 @@ DoduoEggMoves:
 	db HAZE
 	db FAINT_ATTACK
 	db FLAIL
+	db RAZOR_WIND
 	db -1 ; end
 
 SeelEggMoves:
@@ -481,7 +485,6 @@ TotodileEggMoves:
 	db THRASH
 	db HYDRO_PUMP
 	db ANCIENTPOWER
-	db RAZOR_WIND
 	db ROCK_SLIDE
 	db MACH_PUNCH
 	db METAL_CLAW
@@ -631,6 +634,7 @@ MurkrowEggMoves:
 	db MIRROR_MOVE
 	db WING_ATTACK
 	db SKY_ATTACK
+	db RAZOR_WIND
 	db -1 ; end
 
 MisdreavusEggMoves:
@@ -705,6 +709,7 @@ SneaselEggMoves:
 	db FORESIGHT
 	db REFLECT
 	db BITE
+	db RAZOR_WIND
 	db -1 ; end
 
 TeddiursaEggMoves:

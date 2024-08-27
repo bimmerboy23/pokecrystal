@@ -696,3 +696,5 @@ ENDM
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
 	map_attributes Route30CherrygroveGate, ROUTE_30_CHERRYGROVE_GATE, $00, 0
+	map_attributes Route32VioletGate, ROUTE_32_VIOLET_GATE, $00, 0
+	map_attributes Route45BlackthornGate, ROUTE_45_BLACKTHORN_GATE, $00, 0

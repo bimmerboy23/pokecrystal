@@ -534,6 +534,7 @@ Route45_MapEvents:
 
 	def_warp_events
 	warp_event  3,  5, DARK_CAVE_BLACKTHORN_ENTRANCE, 1
+	warp_event 11,  1, ROUTE_45_BLACKTHORN_GATE, 3
 
 	def_coord_events
 

@@ -213,6 +213,8 @@ Route2Gate_Blocks:
 Route29Route46Gate_Blocks:
 Route5SaffronGate_Blocks:
 Route30CherrygroveGate_Blocks:
+Route32VioletGate_Blocks:
+Route45BlackthornGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
 BetaEcruteakCity_Blocks: ; unreferenced

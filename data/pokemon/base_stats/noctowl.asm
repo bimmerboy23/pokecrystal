@@ -3,7 +3,7 @@
 	db 100,  50,  50,  70,  86,  96
 	;   hp  atk  def  spd  sat  sdf
 
-	db PSYCHIC_TYPE, FLYING ; type
+	db NORMAL, FLYING ; type
 	db 90 ; catch rate
 	db 162 ; base exp
 	db NO_ITEM, NO_ITEM ; items

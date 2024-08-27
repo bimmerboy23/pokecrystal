@@ -179,6 +179,7 @@ ENDM
 	map_const ROUTE_45,                                    10, 45 ;  8
 	map_const ROUTE_46,                                    10, 18 ;  9
 	map_const BLACKTHORN_CITY,                             20, 18 ; 10
+	map_const ROUTE_45_BLACKTHORN_GATE,			5,  4 ; 11
 	endgroup
 
 	newgroup CINNABAR                                             ;  6
@@ -249,6 +250,7 @@ ENDM
 	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 15
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
+	map_const ROUTE_32_VIOLET_GATE, 			5,  4 ; 18
 	endgroup
 
 	newgroup GOLDENROD                                            ; 11
@@ -499,7 +501,7 @@ ENDM
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const MR_POKEMONS_HOUSE,                            4,  4 ; 10
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
-	map_const ROUTE_30_CHERRYGROVE_GATE      		5,  4 ; 12
+	map_const ROUTE_30_CHERRYGROVE_GATE,     	        5,  4 ; 12
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 26

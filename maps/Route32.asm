@@ -928,6 +928,7 @@ Route32_MapEvents:
 	warp_event  4,  2, ROUTE_32_RUINS_OF_ALPH_GATE, 3
 	warp_event  4,  3, ROUTE_32_RUINS_OF_ALPH_GATE, 4
 	warp_event  7, 79, UNION_CAVE_1F, 4
+	warp_event 13,  1, ROUTE_32_VIOLET_GATE, 3
 
 	def_coord_events
 	coord_event 18,  8, SCENE_ROUTE32_COOLTRAINER_M_BLOCKS, Route32CooltrainerMStopsYouScene

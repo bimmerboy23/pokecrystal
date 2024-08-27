@@ -13,5 +13,5 @@ RooftopSaleMart2:
 	dbw FULL_RESTORE, 2000
 	dbw RARE_CANDY,   2500
 	dbw ULTRA_BALL,   1000
-	dbw PROTEIN,      3000
+	dbw PROTEIN,      1500
 	db -1

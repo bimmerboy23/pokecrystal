@@ -253,8 +253,8 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw NastyPlotDescription
+	dw FlashCannonDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
@@ -315,8 +315,8 @@ GuillotineDescription:
 	next "pincer attack.@"
 
 RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "Blades of wind"
+	next "strike the foe@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -1232,7 +1232,7 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	next "lower DEFENSE.@"
 
 MirrorCoatDescription:
 	db   "Counters a SPCL."
@@ -1273,3 +1273,6 @@ BeatUpDescription:
 NastyPlotDescription:
 	db   "Sharply increases"
 	next "user's SPCL.ATK.@"
+FlashCannonDescription:
+	db   "An attack that may"
+	next "lower DEFENSE.@"

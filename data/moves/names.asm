@@ -252,4 +252,5 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "NASTY PLOT"
+	li "FLASH CANNON"
 	assert_list_length NUM_ATTACKS
