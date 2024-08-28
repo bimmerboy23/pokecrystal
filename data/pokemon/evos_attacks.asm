@@ -267,7 +267,7 @@ PidgeotEvosAttacks:
 	db 42, PURSUIT
 	db 46, SWIFT
 	db 51, RAZOR_WIND
-`	db 60, EXTREMESPEED
+	db 60, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 RattataEvosAttacks:
