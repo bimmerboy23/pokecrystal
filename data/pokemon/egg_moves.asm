@@ -625,6 +625,7 @@ WooperEggMoves:
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db SAFEGUARD
+	db RECOVER
 	db -1 ; end
 
 MurkrowEggMoves:
