@@ -3048,10 +3048,11 @@ SlugmaEvosAttacks:
 	db 8, EMBER
 	db 15, ROCK_THROW
 	db 22, HARDEN
-	db 29, AMNESIA
-	db 36, FLAMETHROWER
-	db 43, ROCK_SLIDE
-	db 50, BODY_SLAM
+	db 25, RECOVER
+	db 28, AMNESIA
+	db 32, FLAMETHROWER
+	db 39, ROCK_SLIDE
+	db 45, BODY_SLAM
 	db 0 ; no more level-up moves
 
 MagcargoEvosAttacks:
@@ -3062,10 +3063,11 @@ MagcargoEvosAttacks:
 	db 8, EMBER
 	db 15, ROCK_THROW
 	db 22, HARDEN
-	db 29, AMNESIA
-	db 36, FLAMETHROWER
-	db 48, ROCK_SLIDE
-	db 55, BODY_SLAM
+	db 25, RECOVER
+	db 28, AMNESIA
+	db 30, FLAMETHROWER
+	db 42, ROCK_SLIDE
+	db 50, BODY_SLAM
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:
