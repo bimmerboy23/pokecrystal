@@ -1,6 +1,6 @@
 	object_const_def
 	const ROUTE45BLACKTHORNGATE_OFFICER
-	const ROUTE45BLACKTHORNGATE_GRAMPS
+	const ROUTE45BLACKTHORNGATE_ELMS_AIDE
 
 Route45BlackthornGate_MapScripts:
 	def_scene_scripts
@@ -10,9 +10,6 @@ Route45BlackthornGate_MapScripts:
 Route45BlackthornGateOfficerScript:
 	jumptextfaceplayer Route45BlackthornGateOfficerText
 
-Route45BlackthornGateGrampsScript:
-	jumptextfaceplayer Route45BlackthornGateGrampsText
-
 Route45BlackthornGateOfficerText:
 	text "Don't you wonder"
 	line "who'd make some-"
@@ -20,16 +17,73 @@ Route45BlackthornGateOfficerText:
 	cont "And why?"
 	done
 
-Route45BlackthornGateGrampsText:
-	text "Did you see that"
-	line "strange tree in"
-	cont "the road?"
+Route45BlackthornGateAideDexCheckScript:
+	faceplayer
+	opentext
+	checkevent EVENT_ROUTE_45_BLACKTHORN_AIDE
+	iftrue .AlreadyGotItem
+	readvar VAR_DEXCAUGHT
+	ifgreater 60, .Aide60Caught
+	writetext AideTextFailure
+	waitbutton
+	closetext
+	end
 
-	para "That may explain"
-	line "why fewer people"
+.AlreadyGotItem:
+	writetext AideGotText
+	waitbutton
+	closetext
+	end
 
-	para "are visiting the"
-	line "RUINS OF ALPH."
+.Aide60Caught
+	writetext AideTextSuccess
+	giveitem TM51
+	iffalse .NoRoom
+	setevent EVENT_ROUTE_45_BLACKTHORN_GATE_AIDE
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext AideNoRoom
+	waitbutton
+	closetext
+	end
+
+.Aide60Caught
+	writetext AideTextSuccess
+	giveitem TM51
+	closetext
+	end
+
+AideTextFailure:
+	text "Hmm… You don't have"
+	line "enough #MON."
+
+	para "No GIFT for you."
+	done
+
++AideTextSuccess:
+	text "Oh! You do have"
+	line "enough #MON."
+
+	para "Here's TM51!"
+	line "It's a new STEEL"
+	cont "type move!"
+	cont "Flash Cannon!"
+	done
+
+AideNoRoom:
+	text "Your PACK is full"
+	line "it looks like."
+	done
+
+AideGotText:
+	text "I will head back"
+	line "to the lab soon."
+
+	para "Good luck on your"
+	line "journey"
 	done
 
 Route45BlackthornGate_MapEvents:
@@ -47,4 +101,4 @@ Route45BlackthornGate_MapEvents:
 
 	def_object_events
 	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route45BlackthornGateOfficerScript, -1
-	object_event  7,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route45BlackthornGateGrampsScript, -1
+	object_event  7,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route45BlackthornGateAideDexCheckScript, EVENT_ROUTE_45_BLACKTHORN_GATE_AIDE

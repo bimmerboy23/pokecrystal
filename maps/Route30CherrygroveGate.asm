@@ -14,22 +14,23 @@ Route30CherrygroveGateGrampsScript:
 	jumptextfaceplayer Route30CherrygroveGateGrampsText
 
 Route30CherrygroveGateOfficerText:
-	text "Don't you wonder"
-	line "who'd make some-"
-	cont "thing like this?"
-	cont "And why?"
+	text "Make sure to look"
+	line "both ways when"
+	cont "crossing the"
+	cont "tracks!"
 	done
 
 Route30CherrygroveGateGrampsText:
-	text "Did you see that"
-	line "strange tree in"
-	cont "the road?"
+	text "The new train"
+	line "can be really"
+	cont "loud."
 
-	para "That may explain"
-	line "why fewer people"
+	para "My granddaughter"
+	line "likes it because"
 
-	para "are visiting the"
-	line "RUINS OF ALPH."
+	para "now she can visit"
+	line "her boyfriend, who"
+	cont "lives in Saffron."
 	done
 
 Route30CherrygroveGate_MapEvents:

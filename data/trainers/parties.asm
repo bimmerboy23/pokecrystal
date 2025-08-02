@@ -1,14 +1,15 @@
-INCLUDE "data/trainers/party_pointers.asm"
-
-Trainers:
 ; Trainer data structure:
-; - db "NAME@", TRAINERTYPE_* constant
+; - db "NAME@", TRAINERTYPE_* constants |ed together
 ; - 1 to 6 Pokémon:
-;    * for TRAINERTYPE_NORMAL:     db level, species
-;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
-;    * for TRAINERTYPE_ITEM:       db level, species, item
-;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
+;    * in all cases:              db level, species
+;    * with TRAINERTYPE_DVS:      db atk|def dv, spd|spc dv
+;    * with TRAINERTYPE_STAT_EXP: dw hp, atk, def, spd, spc
+;    * with TRAINERTYPE_ITEM:     db item
+;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
+;    (TRAINERTYPE_ITEM_MOVES is just TRAINERTYPE_ITEM | TRAINERTYPE_MOVES)
 ; - db -1 ; end
+
+SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
 	; FALKNER (1)
@@ -97,15 +98,15 @@ ChuckGroup:
 		db SCOPE_LENS
 		db HEADBUTT, DOUBLE_TEAM, KARATE_CHOP, ROCK_SLIDE
 	db 34, HITMONTOP
-		db $a9, $ab ; atk|def, spd|spc
+		db $b9, $ab ; atk|def, spd|spc
 		dw $6400, $6400, $0000, $0000, $0000 ; hp, atk, def, spd, spc
 		db NO_ITEM
 		db ROLLING_KICK, DIG, CURSE, PURSUIT
 	db 35, POLIWRATH
-		db $aa, $9e ; atk|def, spd|spc
+		db $b9, $9e ; atk|def, spd|spc
 		dw $0000, $6400, $0000, $0000, $6400 ; hp, atk, def, spd, spc
 		db MYSTIC_WATER
-		db HYPNOSIS, MIND_READER, SURF, DYNAMICPUNCH
+		db HYPNOSIS, ICE_PUNCH, SURF, DYNAMICPUNCH
 	db -1 ; end
 
 ClairGroup:
@@ -270,7 +271,7 @@ Rival1Group:
 		db WING_ATTACK, STEEL_WING, SAND_ATTACK, TOXIC
 	db 48, MEGANIUM
 		dw $9600, $9600, $3200, $0000, $6400 ; hp, atk, def, spd, spc
-		db SWORDS_DANCE, PETAL_DANCE, SYNTHESIS, BODY_SLAM
+		db SWORDS_DANCE, PETAL_DANCE, ANCIENTPOWER, BODY_SLAM
 	db -1 ; end
 
 	; RIVAL1 (14)
@@ -477,31 +478,82 @@ ChampionGroup:
 
 BrockGroup:
 	; BROCK (1)
-	db "BROCK@", TRAINERTYPE_MOVES
-	db 57, GOLEM,      DEFENSE_CURL, ROCK_SLIDE, ROLLOUT, EARTHQUAKE
-	db 56, RHYHORN,    FURY_ATTACK, SCARY_FACE, EARTHQUAKE, HORN_DRILL
-	db 57, OMASTAR,    BITE, SURF, PROTECT, SPIKE_CANNON
-	db 59, ONIX,       BIND, ROCK_SLIDE, BIDE, SANDSTORM
-	db 57, KABUTOPS,   SLASH, SURF, ENDURE, GIGA_DRAIN
+	db "BROCK@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_MOVES
+	db 65, GOLEM      
+		db $db, $9f ; atk|def, spd|spc
+		dw $6400, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db CURSE, ROCK_SLIDE, SANDSTORM, EARTHQUAKE
+	db 65, RHYDON    
+		db $db, $9f ; atk|def, spd|spc
+		dw $9600, $9600, $0000, $0000, $6400 ; hp, atk, def, spd, spc
+		db CRUNCH, SANDSTORM, EARTHQUAKE, MEGAHORN
+	db 65, OMASTAR    
+		db $db, $9f ; atk|def, spd|spc
+		dw $6400, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db ANCIENTPOWER, SURF, SANDSTORM, ICE_BEAM
+	db 65, STEELIX       
+		db $db, $9f ; atk|def, spd|spc
+		dw $6400, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db EARTHQUAKE, ROCK_SLIDE, IRON_TAIL, SANDSTORM
+	db 67, KABUTOPS  
+		db $f9, $fa ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db SLASH, SURF, RAZOR_WIND, ROCK_SLIDE
 	db -1 ; end
 
 MistyGroup:
 	; MISTY (1)
-	db "MISTY@", TRAINERTYPE_MOVES
-	db 58, GOLDUCK,    SURF, DISABLE, PSYCH_UP, PSYCHIC_M
-	db 58, QUAGSIRE,   SURF, AMNESIA, EARTHQUAKE, RAIN_DANCE
-	db 58, LAPRAS,     SURF, PERISH_SONG, BLIZZARD, RAIN_DANCE
-	db 61, STARMIE,    SURF, CONFUSE_RAY, RECOVER, ICE_BEAM
+	db "MISTY@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_MOVES
+	db 62, GOLDUCK    
+		db $ac, $dd ; atk|def, spd|spc
+		dw $6400, $0000, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db SURF, AMNESIA, ICE_BEAM, PSYCHIC_M
+	db 62, QUAGSIRE   
+		db $db, $9f ; atk|def, spd|spc
+		dw $6400, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db SURF, AMNESIA, EARTHQUAKE, ICE_PUNCH
+	db 62, LAPRAS     
+		db $ac, $ce ; atk|def, spd|spc
+		dw $9600, $0000, $6400, $0000, $9600 ; hp, atk, def, spd, spc
+		db SURF, PERISH_SONG, BLIZZARD, BODY_SLAM
+	db 62, GYARADOS
+		db $f7, $dd ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $6400, $9600 ; hp, atk, def, spd, spc
+		db CRUNCH, GUST, HYDRO_PUMP, HYPER_BEAM
+	db 64, STARMIE    
+		db $7f, $dd ; atk|def, spd|spc
+		dw $9600, $0000, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db SURF, PSYCHIC_M, THUNDERBOLT, ICE_BEAM
 	db -1 ; end
 
 LtSurgeGroup:
 	; LT_SURGE (1)
-	db "LT.SURGE@", TRAINERTYPE_MOVES
-	db 57, RAICHU,     THUNDER_WAVE, QUICK_ATTACK, THUNDERBOLT, THUNDER
-	db 57, ELECTRODE,  SCREECH, DOUBLE_TEAM, SWIFT, EXPLOSION
-	db 57, MAGNETON,   LOCK_ON, DOUBLE_TEAM, SWIFT, ZAP_CANNON
-	db 57, ELECTRODE,  SCREECH, DOUBLE_TEAM, SWIFT, EXPLOSION
-	db 59, ELECTABUZZ, QUICK_ATTACK, THUNDERPUNCH, LIGHT_SCREEN, THUNDER
+	db "LT.SURGE@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
+	db 60, LANTURN 
+		db $7f, $bf ; atk|def, spd|spc
+		dw $9600, $0000, $6400, $0000, $9600 ; hp, atk, def, spd, spc
+		db LEFTOVERS
+		db RAIN_DANCE, SURF, THUNDER_WAVE, THUNDERBOLT
+	db 60, RAICHU
+		db $d9, $dd ; atk|def, spd|spc
+		dw $0000, $6400, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db NO_ITEM
+		db MACH_PUNCH, IRON_TAIL, THUNDERBOLT, THUNDER
+	db 60, JOLTEON
+		db $9d, $dd ; atk|def, spd|spc
+		dw $0000, $6400, $6400, $3200, $9600 ; hp, atk, def, spd, spc
+		db NO_ITEM
+		db THUNDER_WAVE, SHADOW_BALL, THUNDER, RAIN_DANCE
+	db 60, MAGNETON
+		db $ca, $ce ; atk|def, spd|spc
+		dw $3200, $6400, $6400, $0000, $9600 ; hp, atk, def, spd, spc
+		db METAL_COAT
+		db THUNDER, RAIN_DANCE, FLASH_CANNON, ZAP_CANNON
+	db 62, ELECTABUZZ
+		db $d9, $dd ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db NEVERMELTICE
+		db THUNDERBOLT, CROSS_CHOP, ICE_PUNCH, PSYCHIC_M
 	db -1 ; end
 
 ScientistGroup:
@@ -537,11 +589,32 @@ ScientistGroup:
 
 ErikaGroup:
 	; ERIKA (1)
-	db "ERIKA@", TRAINERTYPE_MOVES
-	db 59, TANGELA,    VINE_WHIP, BIND, GIGA_DRAIN, SLEEP_POWDER
-	db 59, JUMPLUFF,   MEGA_DRAIN, LEECH_SEED, COTTON_SPORE, GIGA_DRAIN
-	db 62, VICTREEBEL, SUNNY_DAY, SYNTHESIS, ACID, RAZOR_LEAF
-	db 62, BELLOSSOM,  SUNNY_DAY, SYNTHESIS, PETAL_DANCE, SOLARBEAM
+	db "ERIKA@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
+	db 62, JUMPLUFF 
+		db $9d, $ce ; atk|def, spd|spc
+		dw $3200, $0000, $9600, $6400, $6400 ; hp, atk, def, spd, spc
+		db BRIGHTPOWDER
+		db REFLECT, LEECH_SEED, AMNESIA, GIGA_DRAIN
+	db 62, TANGELA 
+		db $9d, $ce ; atk|def, spd|spc
+		dw $6400, $0000, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db FOCUS_BAND 
+		db TOXIC, PROTECT, GIGA_DRAIN, DOUBLE_TEAM
+	db 62, VICTREEBEL 
+		db $d9, $ce ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $9600, $6400 ; hp, atk, def, spd, spc
+		db POISON_BARB 
+		db SWORDS_DANCE, LEECH_LIFE, SLUDGE_BOMB, RAZOR_LEAF
+	db 62, BELLOSSOM 
+		db $bb, $bf ; atk|def, spd|spc
+		dw $6400, $0000, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db MIRACLE_SEED 
+		db STUN_SPORE, SYNTHESIS, PETAL_DANCE, GIGA_DRAIN
+	db 65, VENUSAUR
+		db $db, $9f ; atk|def, spd|spc
+		dw $9600, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db LEFTOVERS
+		db GIGA_DRAIN, CURSE, SLUDGE_BOMB, EARTHQUAKE
 	db -1 ; end
 
 YoungsterGroup:
@@ -1002,12 +1075,32 @@ LassGroup:
 
 JanineGroup:
 	; JANINE (1)
-	db "JANINE@", TRAINERTYPE_MOVES
-	db 61, CROBAT,     SCREECH, SUPERSONIC, CONFUSE_RAY, WING_ATTACK
-	db 61, WEEZING,    SMOG, SLUDGE_BOMB, TOXIC, EXPLOSION
-	db 61, WEEZING,    SMOG, SLUDGE_BOMB, TOXIC, EXPLOSION
-	db 61, ARIADOS,    SCARY_FACE, GIGA_DRAIN, STRING_SHOT, NIGHT_SHADE
-	db 62, VENOMOTH,   FORESIGHT, DOUBLE_TEAM, GUST, PSYCHIC_M
+	db "JANINE@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
+	db 63, CROBAT
+		db $9d, $ce ; atk|def, spd|spc
+		dw $6400, $0000, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db SPELL_TAG
+		db TOXIC, NASTY_PLOT, SHADOW_BALL, WHIRLWIND
+	db 63, BEEDRILL
+		db $db, $f9 ; atk|def, spd|spc
+		dw $0000, $9600, $6400, $9600, $0000 ; hp, atk, def, spd, spc
+		db FOCUS_BAND 
+		db PURSUIT, TWINEEDLE, AGILITY, SLUDGE_BOMB
+	db 63, WEEZING
+		db $d9, $ce ; atk|def, spd|spc
+		dw $6400, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db QUICK_CLAW 
+		db SLUDGE_BOMB, FLAMETHROWER, THUNDERBOLT, DOUBLE_TEAM
+	db 63, TENTACRUEL
+		db $9d, $ce ; atk|def, spd|spc
+		dw $6400, $0000, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db LEFTOVERS
+		db TOXIC, ICY_WIND, GIGA_DRAIN, WATERFALL
+	db 66, VENOMOTH
+		db $9d, $ce ; atk|def, spd|spc
+		dw $6400, $0000, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db TWISTEDSPOON
+		db TOXIC, PROTECT, GIGA_DRAIN, PSYCHIC_M
 	db -1 ; end
 
 CooltrainerMGroup:
@@ -1119,10 +1212,10 @@ CooltrainerMGroup:
 	db -1 ; end
 
 	; COOLTRAINERM (16)
-	db "SEAN@", TRAINERTYPE_NORMAL
-	db 55, FLAREON
-	db 55, TANGELA
-	db 55, TAUROS
+	db "SEAN@", TRAINERTYPE_MOVES
+	db 55, FLAREON, FIRE_SPIN, FLAMETHROWER, BITE, HEADBUTT
+	db 55, TANGELA, SLEEP_POWDER, ANCIENTPOWER, GIGA_DRAIN, SLAM
+	db 55, TAUROS, MEGAHORN, THRASH, PURSUIT, REST
 	db -1 ; end
 
 	; COOLTRAINERM (17)
@@ -1221,7 +1314,7 @@ CooltrainerFGroup:
 	; COOLTRAINERF (11)
 	db "MEGAN@", TRAINERTYPE_MOVES
 	db 45, JUMPLUFF,   SYNTHESIS, LEECH_SEED, POISONPOWDER, SUNNY_DAY
-	db 45, MEGANIUM,   BODY_SLAM, SWORDS_DANCE, CUT, SYNTHESIS
+	db 45, MEGANIUM,   BODY_SLAM, SWORDS_DANCE, ANCIENTPOWER, EARTHQUAKE
 	db 45, SUNFLORA,   SUNNY_DAY, DOUBLE_TEAM, SOLARBEAM, GIGA_DRAIN
 	db 45, VENUSAUR,   SLUDGE_BOMB, SLEEP_POWDER, RAZOR_LEAF, GROWTH
 	db -1 ; end
@@ -1235,10 +1328,10 @@ CooltrainerFGroup:
 	db -1 ; end
 
 	; COOLTRAINERF (13)
-	db "CAROL@", TRAINERTYPE_NORMAL
-	db 55, ELECTRODE
-	db 55, STARMIE
-	db 55, NINETALES
+	db "CAROL@", TRAINERTYPE_MOVES
+	db 55, ELECTRODE, MIRROR_COAT, THUNDER_WAVE, THUNDERBOLT, LIGHT_SCREEN
+	db 55, STARMIE, SURF, THUNDERBOLT, PSYCHIC_M, LIGHT_SCREEN
+	db 55, NINETALES, NASTY_PLOT, FLAMETHROWER, PSYBEAM, CONFUSE_RAY
 	db -1 ; end
 
 	; COOLTRAINERF (14)
@@ -1327,7 +1420,7 @@ BeautyGroup:
 
 	; BEAUTY (6)
 	db "CASSIE@", TRAINERTYPE_NORMAL
-	db 48, VILEPLUME
+	db 51, VILEPLUME
 	db 54, BUTTERFREE
 	db -1 ; end
 
@@ -1431,8 +1524,8 @@ PokemaniacGroup:
 
 	; POKEMANIAC (8)
 	db "ETHAN@", TRAINERTYPE_NORMAL
-	db 51, MEGANIUM
-	db 51, RHYDON
+	db 52, MEGANIUM
+	db 52, RHYDON
 	db -1 ; end
 
 	; POKEMANIAC (9)
@@ -1672,12 +1765,13 @@ GentlemanGroup:
 	; GENTLEMAN (2)
 	db "EDWARD@", TRAINERTYPE_NORMAL
 	db 53, PERSIAN
+	db 53, NOCTOWL
 	db -1 ; end
 
 	; GENTLEMAN (3)
 	db "GREGORY@", TRAINERTYPE_NORMAL
-	db 57, PIKACHU
-	db 53, FLAAFFY
+	db 57, ELEKID
+	db 57, AMPHAROS
 	db -1 ; end
 
 	; GENTLEMAN (4)
@@ -1720,10 +1814,27 @@ TeacherGroup:
 
 SabrinaGroup:
 	; SABRINA (1)
-	db "SABRINA@", TRAINERTYPE_MOVES
-	db 62, ESPEON,     SAND_ATTACK, QUICK_ATTACK, SWIFT, PSYCHIC_M
-	db 62, MR__MIME,   BARRIER, REFLECT, BATON_PASS, PSYCHIC_M
-	db 64, ALAKAZAM,   RECOVER, FUTURE_SIGHT, PSYCHIC_M, REFLECT
+	db "SABRINA@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_MOVES
+	db 62, MR__MIME  
+		db $ac, $dd ; atk|def, spd|spc
+		dw $6400, $0000, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db BARRIER, REFLECT, BATON_PASS, PSYCHIC_M
+	db 62, WOBBUFFET
+	   	db $9d, $bf ; atk|def, spd|spc
+		dw $6400, $0000, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
+	db 62, SLOWBRO
+		db $ac, $bf ; atk|def, spd|spc
+		dw $9600, $0000, $6400, $0000, $9600 ; hp, atk, def, spd, spc
+		db AMNESIA, FIRE_PUNCH, PSYCHIC_M, SURF
+	db 62, EXEGGUTOR
+		db $ac, $bf ; atk|def, spd|spc
+		dw $6400, $0000, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db HYPNOSIS, DREAM_EATER, EGG_BOMB, PSYCHIC_M
+	db 65, ALAKAZAM 
+		db $ac, $dd ; atk|def, spd|spc
+		dw $0000, $0000, $0000, $C418, $C418 ; hp, atk, def, spd, spc
+		db RECOVER, THUNDERPUNCH, PSYCHIC_M, SHADOW_BALL
 	db -1 ; end
 
 BugCatcherGroup:
@@ -1779,8 +1890,8 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (9)
 	db "KEN@", TRAINERTYPE_NORMAL
-	db 50, ARIADOS
-	db 52, PINSIR
+	db 52, ARIADOS
+	db 54, PINSIR
 	db -1 ; end
 
 	; BUG_CATCHER (10)
@@ -1920,9 +2031,9 @@ FisherGroup:
 	; FISHER (12)
 	db "JONAH@", TRAINERTYPE_NORMAL
 	db 45, SHELLDER
-	db 49, OCTILLERY
+	db 53, OCTILLERY
 	db 45, REMORAID
-	db 49, CLOYSTER
+	db 53, CLOYSTER
 	db -1 ; end
 
 	; FISHER (13)
@@ -2305,16 +2416,16 @@ SailorGroup:
 	; SAILOR (8)
 	db "KENNETH@", TRAINERTYPE_NORMAL
 	db 48, MACHOP
-	db 48, MACHOP
-	db 48, POLIWRATH
-	db 48, MACHOP
+	db 48, MACHOKE
+	db 53, POLIWRATH
+	db 53, MACHAMP
 	db -1 ; end
 
 	; SAILOR (9)
 	db "STANLY@", TRAINERTYPE_NORMAL
-	db 51, MACHOP
-	db 53, MACHOKE
-	db 46, PSYDUCK
+	db 51, MACHOKE
+	db 53, MACHAMP
+	db 53, GOLDUCK
 	db -1 ; end
 
 	; SAILOR (10)
@@ -2392,7 +2503,7 @@ SuperNerdGroup:
 	db "SHAWN@", TRAINERTYPE_NORMAL
 	db 51, MAGNEMITE
 	db 53, MUK
-	db 51, MAGNEMITE
+	db 54, MAGNETON
 	db -1 ; end
 
 	; SUPER_NERD (10)
@@ -2494,10 +2605,10 @@ GuitaristGroup:
 
 	; GUITARIST (2)
 	db "VINCENT@", TRAINERTYPE_NORMAL
-	db 47, MAGNEMITE
-	db 53, VOLTORB
 	db 52, MAGNEMITE
-	db 52, MAGNEMITE
+	db 52, VOLTORB
+	db 57, MAGNETON
+	db 57, ELECTRODE
 	db -1 ; end
 
 HikerGroup:
@@ -2705,10 +2816,27 @@ BikerGroup:
 
 BlaineGroup:
 	; BLAINE (1)
-	db "BLAINE@", TRAINERTYPE_MOVES
-	db 61, MAGCARGO,   CURSE, SMOG, FLAMETHROWER, ROCK_SLIDE
-	db 61, MAGMAR,     THUNDERPUNCH, FIRE_PUNCH, SUNNY_DAY, CONFUSE_RAY
-	db 66, RAPIDASH,   QUICK_ATTACK, FIRE_SPIN, FURY_ATTACK, FIRE_BLAST
+	db "BLAINE@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_MOVES
+	db 66, RAPIDASH   
+		db $ac, $dd ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $9600, $6400 ; hp, atk, def, spd, spc
+		db RAZOR_WIND, SUNNY_DAY, DOUBLE_KICK, FIRE_BLAST
+	db 66, MAGCARGO
+		db $bb, $bf ; atk|def, spd|spc
+		dw $9600, $6400, $0000, $0000, $9600 ; hp, atk, def, spd, spc
+		db AMNESIA, RECOVER, FLAMETHROWER, ROCK_SLIDE
+	db 66, NINETALES 
+		db $9d, $dd ; atk|def, spd|spc
+		dw $6400, $0000, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db FLAMETHROWER, REFLECT, HYPNOSIS, PSYBEAM
+	db 66, ARCANINE 
+		db $d9, $dd ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $9600, $6400 ; hp, atk, def, spd, spc
+		db FLAMETHROWER, EXTREMESPEED, CRUNCH, DIG
+	db 68, MAGMAR   
+		db $d9, $dd ; atk|def, spd|spc
+		dw $0000, $9600, $0000, $9600, $9600 ; hp, atk, def, spd, spc
+		db FLAMETHROWER, PSYCHIC_M, THUNDERPUNCH, CROSS_CHOP
 	db -1 ; end
 
 BurglarGroup:
@@ -2728,9 +2856,9 @@ BurglarGroup:
 	; BURGLAR (3)
 	db "COREY@", TRAINERTYPE_NORMAL
 	db 45, KOFFING
-	db 48, MAGMAR
-	db 45, KOFFING
-	db 50, KOFFING
+	db 48, KOFFING
+	db 54, WEEZING
+	db 54, MAGMAR
 	db -1 ; end
 
 FirebreatherGroup:
@@ -2779,8 +2907,8 @@ FirebreatherGroup:
 	; FIREBREATHER (8)
 	db "LYLE@", TRAINERTYPE_NORMAL
 	db 48, KOFFING
-	db 51, FLAREON
-	db 48, KOFFING
+	db 51, WEEZING
+	db 53, FLAREON
 	db -1 ; end
 
 JugglerGroup:
@@ -2794,17 +2922,16 @@ JugglerGroup:
 
 	; JUGGLER (2)
 	db "FRITZ@", TRAINERTYPE_NORMAL
-	db 49, MR__MIME
-	db 49, MAGMAR
-	db 49, MACHOKE
+	db 51, MR__MIME
+	db 51, MAGMAR
+	db 51, MACHAMP
 	db -1 ; end
 
 	; JUGGLER (3)
 	db "HORTON@", TRAINERTYPE_NORMAL
-	db 53, ELECTRODE
-	db 53, ELECTRODE
-	db 53, ELECTRODE
-	db 53, ELECTRODE
+	db 55, ELECTRODE
+	db 55, ELECTRODE
+	db 55, ELECTRODE
 	db -1 ; end
 
 	; JUGGLER (4)
@@ -2886,7 +3013,7 @@ BlackbeltGroup:
 	db "WAI@", TRAINERTYPE_NORMAL
 	db 50, MACHOKE
 	db 52, MACHOKE
-	db 54, MACHOKE
+	db 54, MACHAMP
 	db -1 ; end
 
 ExecutiveMGroup:
@@ -3278,7 +3405,7 @@ CamperGroup:
 	db "TODD@", TRAINERTYPE_MOVES
 	db 43, GRAVELER,   SELFDESTRUCT, ROCK_THROW, HARDEN, MAGNITUDE
 	db 43, GRAVELER,   SELFDESTRUCT, ROCK_THROW, HARDEN, MAGNITUDE
-	db 46, MAGCARGO,   ROCK_THROW, HARDEN, AMNESIA, FLAMETHROWER
+	db 46, MAGCARGO,   ROCK_SLIDE, RECOVER, AMNESIA, FLAMETHROWER
 	db 44, GOLDUCK,    DISABLE, PSYCHIC_M, SURF, PSYCH_UP
 	db -1 ; end
 
@@ -3490,13 +3617,13 @@ PokefanMGroup:
 	; POKEFANM (8)
 	db "JEREMY@", TRAINERTYPE_ITEM
 	db 48, MEOWTH,     BERRY
-	db 48, MEOWTH,     BERRY
-	db 48, MEOWTH,     BERRY
+	db 52, PIKACHU,     BERRY
+	db 55, PERSIAN,     BERRY
 	db -1 ; end
 
 	; POKEFANM (9)
 	db "COLIN@", TRAINERTYPE_ITEM
-	db 52, DELIBIRD,   BERRY
+	db 55, DELIBIRD,   BERRY
 	db -1 ; end
 
 	; POKEFANM (10)
@@ -3657,24 +3784,60 @@ PokefanFGroup:
 
 RedGroup:
 	; RED (1)
-	db "RED@", TRAINERTYPE_MOVES
-	db 83, PIKACHU,    CHARM, QUICK_ATTACK, THUNDERBOLT, THUNDER
-	db 75, ESPEON,     MUD_SLAP, REFLECT, SWIFT, PSYCHIC_M
-	db 77, SNORLAX,    AMNESIA, SNORE, REST, BODY_SLAM
-	db 79, VENUSAUR,   SUNNY_DAY, GIGA_DRAIN, SYNTHESIS, SOLARBEAM
-	db 79, CHARIZARD,  FLAMETHROWER, WING_ATTACK, SLASH, FIRE_SPIN
-	db 79, BLASTOISE,  RAIN_DANCE, SURF, BLIZZARD, WHIRLPOOL
+	db "RED@", TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
+	db 80, ESPEON
+		dw $9600, $9600, $9600, PERFECT_STAT_EXP, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db TWISTEDSPOON
+		db BATON_PASS, REFLECT, SHADOW_BALL, PSYCHIC_M
+	db 83, PIKACHU
+		dw PERFECT_STAT_EXP, PERFECT_STAT_EXP, PERFECT_STAT_EXP, PERFECT_STAT_EXP, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db LIGHT_BALL
+		db MACH_PUNCH, HIDDEN_POWER, THUNDERBOLT, NASTY_PLOT
+	db 80, SNORLAX
+		dw PERFECT_STAT_EXP, PERFECT_STAT_EXP, $9600, $9600, $9600 ; hp, atk, def, spd, spc
+		db LEFTOVERS
+		db CRUNCH, CURSE, REST, BODY_SLAM
+	db 81, VENUSAUR
+		dw PERFECT_STAT_EXP, PERFECT_STAT_EXP, $9600, $9600, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db MIRACLE_SEED
+		db CURSE, GIGA_DRAIN, EARTHQUAKE, SLUDGE_BOMB
+	db 81, CHARIZARD
+		dw $9600, PERFECT_STAT_EXP, $9600, PERFECT_STAT_EXP, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db CHARCOAL
+		db FLAMETHROWER, WING_ATTACK, EARTHQUAKE, SWORDS_DANCE
+	db 81, BLASTOISE
+		dw PERFECT_STAT_EXP, $9600, PERFECT_STAT_EXP, $9600, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db MYSTIC_WATER
+		db EARTHQUAKE, SURF, ICE_BEAM, FLASH_CANNON
 	db -1 ; end
 
 BlueGroup:
 	; BLUE (1)
-	db "BLUE@", TRAINERTYPE_MOVES
-	db 66, PIDGEOT,    QUICK_ATTACK, WHIRLWIND, WING_ATTACK, MIRROR_MOVE
-	db 64, ALAKAZAM,   DISABLE, RECOVER, PSYCHIC_M, REFLECT
-	db 66, RHYDON,     FURY_ATTACK, SANDSTORM, ROCK_SLIDE, EARTHQUAKE
-	db 68, GYARADOS,   TWISTER, HYDRO_PUMP, RAIN_DANCE, HYPER_BEAM
-	db 68, EXEGGUTOR,  SUNNY_DAY, LEECH_SEED, EGG_BOMB, SOLARBEAM
-	db 68, ARCANINE,   ROAR, SWIFT, FLAMETHROWER, EXTREMESPEED
+	db "BLUE@", TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
+	db 66, PIDGEOT   
+		dw $9600, $9600, $9600, PERFECT_STAT_EXP, $0000 ; hp, atk, def, spd, spc
+		db POLKADOT_BOW
+		db EXTREMESPEED, RAZOR_WIND, PURSUIT, STEEL_WING
+	db 66, ALAKAZAM  
+		dw $9600, $0000, $9600, $9600, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db TWISTEDSPOON
+		db THUNDERPUNCH, RECOVER, PSYCHIC_M, SHADOW_BALL
+	db 66, TYRANITAR 
+		dw $9600, PERFECT_STAT_EXP, $9600, $0000, $9600 ; hp, atk, def, spd, spc
+		db LEFTOVERS
+		db CRUNCH, ICE_BEAM, ROCK_SLIDE, EARTHQUAKE
+	db 70, GYARADOS  
+		dw $9600, PERFECT_STAT_EXP, $9600, $9600, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db MYSTIC_WATER
+		db EARTHQUAKE, HYDRO_PUMP, ICY_WIND, CRUNCH
+	db 70, EXEGGUTOR 
+		dw PERFECT_STAT_EXP, $9600, $9600, $9600, PERFECT_STAT_EXP ; hp, atk, def, spd, spc
+		db MIRACLE_SEED
+		db HYPNOSIS, LEECH_SEED, EGG_BOMB, PSYCHIC_M
+	db 70, ARCANINE  
+		dw $9600, PERFECT_STAT_EXP, $9600, PERFECT_STAT_EXP, $9600 ; hp, atk, def, spd, spc
+		db CHARCOAL
+		db ROAR, DIG, FLAMETHROWER, EXTREMESPEED
 	db -1 ; end
 
 OfficerGroup:
