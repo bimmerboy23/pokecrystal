@@ -21,22 +21,22 @@ Route45BlackthornGateAideDexCheckScript:
 	faceplayer
 	opentext
 	checkevent EVENT_ROUTE_45_BLACKTHORN_AIDE
-	iftrue .AlreadyGotItem
+	iftrue .AlreadyGotItem45
 	readvar VAR_DEXCAUGHT
-	ifgreater 60, .Aide60Caught
-	writetext AideTextFailure
+	ifgreater 60, .Aide60Caught45
+	writetext AideTextFailure45
 	waitbutton
 	closetext
 	end
 
-.AlreadyGotItem:
-	writetext AideGotText
+.AlreadyGotItem45:
+	writetext AideGotText45
 	waitbutton
 	closetext
 	end
 
-.Aide60Caught
-	writetext AideTextSuccess
+.Aide60Caught45:
+	writetext AideTextSuccess45
 	giveitem TM51
 	iffalse .NoRoom
 	setevent EVENT_ROUTE_45_BLACKTHORN_GATE_AIDE
@@ -44,26 +44,20 @@ Route45BlackthornGateAideDexCheckScript:
 	closetext
 	end
 
-.NoRoom:
-	writetext AideNoRoom
-	waitbutton
-	closetext
-	end
-
-.Aide60Caught
-	writetext AideTextSuccess
+.Aide60Caught45
+	writetext AideTextSuccess45
 	giveitem TM51
 	closetext
 	end
 
-AideTextFailure:
+AideTextFailure45:
 	text "Hmm… You don't have"
 	line "enough #MON."
 
 	para "No GIFT for you."
 	done
 
-AideTextSuccess:
+AideTextSuccess45:
 	text "Oh! You do have"
 	line "enough #MON."
 
@@ -73,12 +67,7 @@ AideTextSuccess:
 	cont "Flash Cannon!"
 	done
 
-AideNoRoom:
-	text "Your PACK is full"
-	line "it looks like."
-	done
-
-AideGotText:
+AideGotText45:
 	text "I will head back"
 	line "to the lab soon."
 
