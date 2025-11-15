@@ -1,9 +1,9 @@
 	db MEGANIUM ; 154
 
-	db  91,  85, 104,  60,  86, 104
+	db  94,  88, 100,  60,  88, 100
 	;   hp  atk  def  spd  sat  sdf
 
-	db GRASS, GRASS ; type
+	db GRASS, ROCK ; type
 	db 45 ; catch rate
 	db 208 ; base exp
 	db NO_ITEM, NO_ITEM ; items

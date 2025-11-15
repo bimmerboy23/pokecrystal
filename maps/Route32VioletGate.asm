@@ -63,7 +63,7 @@ AideTextFailure:
 	para "No GIFT for you."
 	done
 
-+AideTextSuccess:
+AideTextSuccess:
 	text "Oh! You do have"
 	line "enough #MON."
 

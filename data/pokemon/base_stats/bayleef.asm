@@ -1,6 +1,6 @@
 	db BAYLEEF ; 153
 
-	db  68,  63,  77,  56,  64,  77
+	db  69,  64,  78,  52,  64,  78
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type

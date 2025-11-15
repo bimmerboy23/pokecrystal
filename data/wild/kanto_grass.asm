@@ -136,38 +136,38 @@ KantoGrassWildMons:
 	db 42, GOLBAT
 	db 42, GRAVELER
 	db 40, ONIX
+	db 42, GRAVELER
+	db 43, GRAVELER
 	db 44, GRAVELER
-	db 48, GRAVELER
-	db 48, GRAVELER
-	db 48, GRAVELER
+	db 48, GOLEM
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 38, ZUBAT
+	db 38, GOLBAT
 	db 38, RATICATE
-	db 40, GOLBAT
+	db 40, NIDORINO
 	db 40, SLOWPOKE
-	db 40, RATTATA
-	db 40, SLOWPOKE
-	db 40, SLOWPOKE
+	db 40, NIDORINO
+	db 40, SLOWKING
+	db 40, SLOWBRO
 	; day
-	db 38, ZUBAT
+	db 38, GOLBAT
 	db 38, RATICATE
-	db 40, GOLBAT
+	db 40, NIDORINO
 	db 40, SLOWPOKE
-	db 40, RATTATA
-	db 40, SLOWPOKE
-	db 40, SLOWPOKE
+	db 40, NIDORINA
+	db 40, SLOWKING
+	db 40, SLOWBRO
 	; nite
-	db 38, ZUBAT
+	db 38, GOLBAT
 	db 38, RATICATE
-	db 40, GOLBAT
+	db 40, NIDORINA
 	db 40, SLOWPOKE
-	db 40, RATTATA
-	db 40, SLOWPOKE
-	db 40, SLOWPOKE
+	db 40, NIDORINO
+	db 40, SLOWBRO
+	db 40, SLOWBRO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1

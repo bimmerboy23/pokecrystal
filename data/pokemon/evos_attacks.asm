@@ -1300,7 +1300,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	db EVOLVE_HELD, METAL_COAT, 30, STEELIX
+	db EVOLVE_HELD, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
@@ -1713,7 +1713,7 @@ MrMimeEvosAttacks:
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
-	db EVOLVE_HELD, METAL_COAT, 30, SCIZOR
+	db EVOLVE_HELD, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -3043,7 +3043,7 @@ UrsaringEvosAttacks:
 	db 0 ; no more level-up moves
 
 SlugmaEvosAttacks:
-	db EVOLVE_LEVEL, 38, MAGCARGO
+	db EVOLVE_LEVEL, 28, MAGCARGO
 	db 0 ; no more evolutions
 	db 1, SMOG
 	db 8, EMBER
@@ -3051,9 +3051,9 @@ SlugmaEvosAttacks:
 	db 22, HARDEN
 	db 25, RECOVER
 	db 28, AMNESIA
-	db 32, FLAMETHROWER
-	db 39, ROCK_SLIDE
-	db 45, BODY_SLAM
+	db 30, FLAMETHROWER
+	db 36, ROCK_SLIDE
+	db 42, BODY_SLAM
 	db 0 ; no more level-up moves
 
 MagcargoEvosAttacks:
@@ -3066,8 +3066,8 @@ MagcargoEvosAttacks:
 	db 22, HARDEN
 	db 25, RECOVER
 	db 28, AMNESIA
-	db 30, FLAMETHROWER
-	db 42, ROCK_SLIDE
+	db 32, FLAMETHROWER
+	db 40, ROCK_SLIDE
 	db 50, BODY_SLAM
 	db 0 ; no more level-up moves
 
