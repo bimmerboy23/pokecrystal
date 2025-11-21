@@ -2793,6 +2793,7 @@ wDudeNumBalls:: db
 wDudeBalls:: ds 2 * 4 + 1
 ENDU
 
+wOtherTrainerType:: db
 wTrainerGroupBank:: db
 	ds 2
 

@@ -332,7 +332,7 @@ EkansEvosAttacks:
 	db 15, GLARE
 	db 21, ACID
 	db 24, SCREECH
-	db 33, ACID
+	db 33, SLUDGE
 	db 38, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
@@ -449,7 +449,7 @@ NidoranMEvosAttacks:
 	db 17, POISON_STING
 	db 20, FOCUS_ENERGY
 	db 25, FURY_ATTACK
-	db 36, CRUNCH
+	db 34, CRUNCH
 	db 0 ; no more level-up moves
 
 NidorinoEvosAttacks:
@@ -462,7 +462,7 @@ NidorinoEvosAttacks:
 	db 19, POISON_STING
 	db 22, FOCUS_ENERGY
 	db 27, FURY_ATTACK
-	db 40, CRUNCH
+	db 37, CRUNCH
 	db 0 ; no more level-up moves
 
 NidokingEvosAttacks:
@@ -2515,6 +2515,7 @@ XatuEvosAttacks:
 	db 1, NIGHT_SHADE
 	db 10, TELEPORT
 	db 23, CONFUSE_RAY
+	db 25, CONFUSION
 	db 32, FUTURE_SIGHT
 	db 40, LIGHT_SCREEN
 	db 50, PSYCHIC_M
