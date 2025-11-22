@@ -38,8 +38,6 @@ IvysaurEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEECH_SEED
-	db 4, GROWL
-	db 7, LEECH_SEED
 	db 10, VINE_WHIP
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
@@ -57,9 +55,6 @@ VenusaurEvosAttacks:
 	db 1, GROWL
 	db 1, LEECH_SEED
 	db 1, VINE_WHIP
-	db 4, GROWL
-	db 7, LEECH_SEED
-	db 10, VINE_WHIP
 	db 15, POISONPOWDER
 	db 15, SLEEP_POWDER
 	db 22, RAZOR_LEAF
@@ -3226,6 +3221,7 @@ PhanpyEvosAttacks:
 	db 1, GROWL
 	db 7, DEFENSE_CURL
 	db 12, FLAIL
+	db 15, MUD_SLAP
 	db 22, TAKE_DOWN
 	db 33, ROLLOUT
 	db 41, ENDURE
@@ -3234,14 +3230,15 @@ PhanpyEvosAttacks:
 
 DonphanEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TACKLE
 	db 1, GROWL
 	db 1, DEFENSE_CURL
 	db 9, FLAIL
 	db 25, HORN_ATTACK
-	db 30, FURY_ATTACK
 	db 33, ROLLOUT
-	db 41, RAPID_SPIN
-	db 49, EARTHQUAKE
+	db 38, RAPID_SPIN
+	db 42, EARTHQUAKE
+	db 51, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:

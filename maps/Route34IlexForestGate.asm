@@ -46,15 +46,15 @@ Route34IlexForestGateTeacherScript:
 	opentext
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .ForestIsRestless
-	checkevent EVENT_GOT_TM12_SWEET_SCENT
-	iftrue .GotSweetScent
+	checkevent EVENT_GOT_TM12_BULLET_SEED
+	iftrue .GotBulletSeed
 	writetext Route34IlexForestGateTeacherText
 	promptbutton
-	verbosegiveitem TM_SWEET_SCENT
+	verbosegiveitem TM_BULLET_SEED
 	iffalse .NoRoom
-	setevent EVENT_GOT_TM12_SWEET_SCENT
-.GotSweetScent:
-	writetext Route34IlexForestGateTeacher_GotSweetScent
+	setevent EVENT_GOT_TM12_BULLET_SEED
+.GotBulletSeed:
+	writetext Route34IlexForestGateTeacher_GotBulletSeed
 	waitbutton
 .NoRoom:
 	closetext
@@ -98,14 +98,14 @@ Route34IlexForestGateTeacherText:
 	line "this TM."
 	done
 
-Route34IlexForestGateTeacher_GotSweetScent:
-	text "It's SWEET SCENT."
+Route34IlexForestGateTeacher_GotBulletSeed:
+	text "It's BULLET SEED."
 
-	para "Use it wherever"
-	line "#MON appear."
+	para "It's a new grass"
+	line "move."
 
-	para "#MON will be"
-	line "enticed by it."
+	para "Seeds are projected"
+	line "multiple times."
 	done
 
 Route34IlexForestGateTeacher_ForestIsRestless:
