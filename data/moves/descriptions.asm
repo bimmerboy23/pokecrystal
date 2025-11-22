@@ -12,7 +12,7 @@ MoveDescriptions::
 	dw ThunderpunchDescription
 	dw ScratchDescription
 	dw VicegripDescription
-	dw GuillotineDescription
+	dw AerialAceDescription
 	dw RazorWindDescription
 	dw SwordsDanceDescription
 	dw CutDescription
@@ -310,9 +310,9 @@ VicegripDescription:
 	db   "Grips with power-"
 	next "ful pincers.@"
 
-GuillotineDescription:
-	db   "A one-hit KO,"
-	next "pincer attack.@"
+AerialAceDescription:
+	db   "The attack lands"
+	next "without fail.@"
 
 RazorWindDescription:
 	db   "Blades of wind"

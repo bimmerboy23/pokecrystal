@@ -25,7 +25,7 @@ Moves:
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       75, ELECTRIC,     100, 15,  10
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,       100, 35,   0
 	move VICEGRIP,     EFFECT_NORMAL_HIT,         55, NORMAL,       100, 30,   0
-	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,        30,  5,   0
+	move AERIAL_ACE,   EFFECT_PRIORITY_HIT,       60, NORMAL,       100, 20,   0
 	move RAZOR_WIND,   EFFECT_DEFENSE_DOWN_HIT,   80, FLYING,       100, 10,  20
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,       100, 30,   0
 	move CUT,          EFFECT_NORMAL_HIT,         55, BUG,	         95, 20,   0

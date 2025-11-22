@@ -13,7 +13,7 @@ BattleAnimations::
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_Scratch
 	dw BattleAnim_Vicegrip
-	dw BattleAnim_Guillotine
+	dw BattleAnim_AerialAce
 	dw BattleAnim_RazorWind
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
@@ -2509,19 +2509,26 @@ BattleAnim_DrillPeck:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_Guillotine:
-	anim_1gfx BATTLE_ANIM_GFX_CUT
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $10
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $40, $2, $0
-	anim_sound 0, 1, SFX_VICEGRIP
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 156, 44, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 152, 40, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 148, 36, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_UP_RIGHT, 124, 76, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_UP_RIGHT, 120, 72, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_UP_RIGHT, 116, 68, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_UP_RIGHT, 120, 72, $0
-	anim_wait 32
+BattleAnim_AerialAce:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
+	anim_sound 0, 0, SFX_MENU
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_sound 0, 1, SFX_WING_ATTACK
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 160, 40, $0
+	anim_wait 24
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 68, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 24
 	anim_ret
 
 BattleAnim_Flash:

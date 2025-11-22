@@ -135,6 +135,7 @@ ParasEggMoves:
 	db -1 ; end
 
 VenonatEggMoves:
+	db BULLET_SEED
 	db BATON_PASS
 	db SCREECH
 	db GIGA_DRAIN
@@ -698,6 +699,7 @@ ShuckleEggMoves:
 	db -1 ; end
 
 HeracrossEggMoves:
+	db BULLET_SEED
 	db HARDEN
 	db BIDE
 	db FLAIL

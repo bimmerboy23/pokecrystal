@@ -297,11 +297,12 @@ SpearowEvosAttacks:
 	db 1, PECK
 	db 1, GROWL
 	db 7, LEER
-	db 13, FURY_ATTACK
-	db 23, PURSUIT
-	db 31, MIRROR_MOVE
+	db 10, FURY_ATTACK
+	db 13, PURSUIT
+	db 17, AERIAL_ACE
+	db 21, MIRROR_MOVE
+	db 25, AGILITY
 	db 37, DRILL_PECK
-	db 43, AGILITY
 	db 0 ; no more level-up moves
 
 FearowEvosAttacks:
@@ -310,11 +311,11 @@ FearowEvosAttacks:
 	db 1, GROWL
 	db 1, LEER
 	db 1, FURY_ATTACK
-	db 25, PURSUIT
-	db 28, WING_ATTACK
-	db 32, MIRROR_MOVE
-	db 40, DRILL_PECK
-	db 47, AGILITY
+	db 13, PURSUIT
+	db 17, AERIAL_ACE
+	db 23, MIRROR_MOVE
+	db 29, AGILITY
+	db 47, DRILL_PECK
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
@@ -1127,14 +1128,16 @@ FarfetchDEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 5, SAND_ATTACK
-	db 10, LEER
-	db 15, FURY_ATTACK
-	db 20, FURY_CUTTER
+	db 8, LEER
+	db 12, FURY_ATTACK
+	db 17, FURY_CUTTER
+	db 22, AERIAL_ACE
 	db 25, SWORDS_DANCE
 	db 28, RAZOR_WIND
 	db 31, AGILITY
-	db 37, SLASH
-	db 44, CROSS_CHOP
+	db 36, SLASH
+	db 41, RAZOR_WIND
+	db 49, CROSS_CHOP
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
@@ -2720,7 +2723,7 @@ YanmaEvosAttacks:
 	db 17, LEECH_LIFE
 	db 23, PURSUIT
 	db 28, ANCIENTPOWER
-	db 33, WING_ATTACK
+	db 33, AERIAL_ACE
 	db 42, DRAGONBREATH
 	db 47, RAZOR_WIND
 	db 0 ; no more level-up moves
@@ -2785,10 +2788,10 @@ UmbreonEvosAttacks:
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 11, PURSUIT
-	db 15, HAZE
-	db 20, WING_ATTACK
-	db 26, NIGHT_SHADE
+	db 9, PURSUIT
+	db 11, HAZE
+	db 15, WING_ATTACK
+	db 24, NIGHT_SHADE
 	db 31, FAINT_ATTACK
 	db 41, MEAN_LOOK
 	db 48, DRILL_PECK
@@ -2990,14 +2993,15 @@ HeracrossEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
-	db 6, HORN_ATTACK
-	db 12, ENDURE
-	db 17, KARATE_CHOP
-	db 19, FURY_ATTACK
-	db 25, ROCK_SMASH
-	db 30, PIN_MISSILE
-	db 35, TAKE_DOWN
-	db 44, REVERSAL
+	db 1, HORN_ATTACK
+	db 7, ENDURE
+	db 10, FURY_ATTACK
+	db 15, KARATE_CHOP
+	db 22, AERIAL_ACE
+	db 24, ROCK_SMASH
+	db 28, PIN_MISSILE
+	db 31, TAKE_DOWN
+	db 43, REVERSAL
 	db 54, MEGAHORN
 	db 0 ; no more level-up moves
 
@@ -3154,7 +3158,7 @@ MantineEvosAttacks:
 	db 18, BUBBLEBEAM
 	db 25, TAKE_DOWN
 	db 32, AGILITY
-	db 40, WING_ATTACK
+	db 39, AERIAL_ACE
 	db 49, PSYBEAM
 	db 0 ; no more level-up moves
 
