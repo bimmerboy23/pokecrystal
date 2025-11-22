@@ -153,7 +153,7 @@ Moves:
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,        75, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE, 100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,        55, 40,   0
-	move BARRAGE,      EFFECT_MULTI_HIT,          20, NORMAL,        90, 20,   0
+	move BULLET_SEED,  EFFECT_MULTI_HIT,          25, GRASS,        100, 30,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,          100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        75, 10,   0
 	move SKY_ATTACK,   EFFECT_SKY_ATTACK,        140, FLYING,        90,  5,   0

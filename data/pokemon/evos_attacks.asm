@@ -1405,8 +1405,8 @@ ElectrodeEvosAttacks:
 ExeggcuteEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR
 	db 0 ; no more evolutions
-	db 1, BARRAGE
 	db 1, HYPNOSIS
+	db 5, BULLET_SEED
 	db 7, REFLECT
 	db 12, LEECH_SEED
 	db 17, CONFUSION
@@ -1420,7 +1420,7 @@ ExeggcuteEvosAttacks:
 
 ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BARRAGE
+	db 1, BULLET_SEED
 	db 1, HYPNOSIS
 	db 1, CONFUSION
 	db 34, STOMP
@@ -2631,9 +2631,11 @@ HoppipEvosAttacks:
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
-	db 20, LEECH_SEED
-	db 25, COTTON_SPORE
-	db 30, GIGA_DRAIN
+	db 19, BULLET_SEED
+	db 22, LEECH_SEED
+	db 25, MEGA_DRAIN
+	db 28, COTTON_SPORE
+	db 37, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
@@ -2647,12 +2649,12 @@ SkiploomEvosAttacks:
 	db 5, POISONPOWDER
 	db 5, STUN_SPORE
 	db 10, SLEEP_POWDER
-	db 18, LEECH_SEED
-	db 20, COTTON_SPORE
-	db 23, MEGA_DRAIN
-	db 25, SUNNY_DAY
-	db 29, AMNESIA
-	db 36, GIGA_DRAIN
+	db 20, BULLET_SEED
+	db 24, LEECH_SEED
+	db 28, MEGA_DRAIN
+	db 32, COTTON_SPORE
+	db 36, SUNNY_DAY
+	db 44, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
@@ -2664,12 +2666,12 @@ JumpluffEvosAttacks:
 	db 5, POISONPOWDER
 	db 5, STUN_SPORE
 	db 10, SLEEP_POWDER
-	db 18, LEECH_SEED
-	db 20, COTTON_SPORE
-	db 23, MEGA_DRAIN
-	db 25, SUNNY_DAY
-	db 30, AMNESIA
-	db 40, GIGA_DRAIN
+	db 20, BULLET_SEED
+	db 24, LEECH_SEED
+	db 28, MEGA_DRAIN
+	db 34, COTTON_SPORE
+	db 38, SUNNY_DAY
+	db 46, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
@@ -2689,22 +2691,27 @@ SunkernEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 4, GROWTH
-	db 10, MEGA_DRAIN
+	db 1, GROWTH
+	db 5, MEGA_DRAIN
+	db 13, LEECH_SEED
+	db 17, RAZOR_LEAF
 	db 19, SUNNY_DAY
 	db 21, SYNTHESIS
-	db 26, GIGA_DRAIN
+	db 32, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 1, POUND
-	db 4, GROWTH
-	db 30, RAZOR_LEAF
-	db 39, SUNNY_DAY
-	db 41, PETAL_DANCE
-	db 46, SOLARBEAM
+	db 5, GROWTH
+	db 5, MEGA_DRAIN
+	db 17, LEECH_SEED
+	db 21, BULLET_SEED
+	db 29, RAZOR_LEAF
+	db 33, PETAL_DANCE
+	db 37, SUNNY_DAY
+	db 41, SOLARBEAM
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
@@ -3118,6 +3125,7 @@ RemoraidEvosAttacks:
 	db 22, PSYBEAM
 	db 22, AURORA_BEAM
 	db 22, BUBBLEBEAM
+	db 27, BULLET_SEED
 	db 33, FOCUS_ENERGY
 	db 44, ICE_BEAM
 	db 55, HYPER_BEAM
@@ -3131,8 +3139,9 @@ OctilleryEvosAttacks:
 	db 22, AURORA_BEAM
 	db 22, BUBBLEBEAM
 	db 25, OCTAZOOKA
+	db 31, BULLET_SEED
 	db 38, FOCUS_ENERGY
-	db 49, ICE_BEAM
+	db 47, ICE_BEAM
 	db 61, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -3145,6 +3154,7 @@ MantineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, BUBBLE
+	db 1, BULLET_SEED
 	db 10, SUPERSONIC
 	db 18, BUBBLEBEAM
 	db 25, TAKE_DOWN
