@@ -1,5 +1,6 @@
 	object_const_def
 	const ROUTE42ECRUTEAKGATE_OFFICER
+	const ROUTE42ECRUTEAKGATE_COOLTRAINER_F
 
 Route42EcruteakGate_MapScripts:
 	def_scene_scripts
@@ -17,6 +18,44 @@ Route42EcruteakGateOfficerText:
 	line "get lost in there."
 	done
 
+Route42EcruteakGateCooltrainerFScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TM09_AERIAL_ACE
+	iftrue .GotAerialAce
+	writetext Route42EcruteakGateCooltrainerFText
+	promptbutton
+	verbosegiveitem TM_AERIAL_ACE
+	iffalse .NoRoom
+	setevent EVENT_GOT_TM09_AERIAL_ACE
+.GotAerialAce:
+	writetext Route42EcruteakGateCooltrainerFText_GotAerialAce
+	waitbutton
+.NoRoom:
+	closetext
+	end
+
+Route42EcruteakGateCooltrainerFTextText:
+	text "Hey, are you a"
+	line "new trainer?"
+
+	para "I have a new move"
+	line "that could help"
+
+	para "you on your journey!"
+	line "Here take this."
+	done
+
+Route42EcruteakGateCooltrainerFText_GotAerialAce
+	text "It's AERIAL ACE."
+
+	para "It's a new flying"
+	line "move."
+
+	para "It's a speedy"
+	line "unavoidable attack."
+	done
+
 Route42EcruteakGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -32,3 +71,4 @@ Route42EcruteakGate_MapEvents:
 
 	def_object_events
 	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateOfficerScript, -1
+	object_event  1,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateCooltrainerFScript, -1

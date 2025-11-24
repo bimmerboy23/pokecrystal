@@ -487,7 +487,6 @@ TotodileEggMoves:
 	db HYDRO_PUMP
 	db ANCIENTPOWER
 	db ROCK_SLIDE
-	db MACH_PUNCH
 	db METAL_CLAW
 	db -1 ; end
 
