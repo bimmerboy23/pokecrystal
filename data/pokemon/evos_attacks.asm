@@ -29,6 +29,7 @@ BulbasaurEvosAttacks:
 	db 28, TAKE_DOWN
 	db 32, GROWTH
 	db 36, SYNTHESIS
+	db 38, SEED_BOMB
 	db 40, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -46,6 +47,7 @@ IvysaurEvosAttacks:
 	db 28, TAKE_DOWN
 	db 31, GROWTH
 	db 38, SYNTHESIS
+	db 40, SEED_BOMB
 	db 42, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -63,6 +65,7 @@ VenusaurEvosAttacks:
 	db 31, GROWTH
 	db 37, PETAL_DANCE
 	db 40, SYNTHESIS
+	db 48, SEED_BOMB
 	db 51, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -1425,7 +1428,7 @@ ExeggutorEvosAttacks:
 	db 1, HYPNOSIS
 	db 1, CONFUSION
 	db 1, STOMP
-	db 48, EGG_BOMB
+	db 48, SEED_BOMB
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
@@ -1570,7 +1573,7 @@ ChanseyEvosAttacks:
 	db 17, DOUBLESLAP
 	db 23, MINIMIZE
 	db 29, SING
-	db 35, EGG_BOMB
+	db 35, SEED_BOMB
 	db 41, DEFENSE_CURL
 	db 49, LIGHT_SCREEN
 	db 57, DOUBLE_EDGE
@@ -2669,12 +2672,14 @@ SunkernEvosAttacks:
 	db 19, SUNNY_DAY
 	db 21, SYNTHESIS
 	db 32, GIGA_DRAIN
+	db 38, SEED_BOMB
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 1, POUND
+	db 1, SEED_BOMB
 	db 5, GROWTH
 	db 5, MEGA_DRAIN
 	db 17, LEECH_SEED
@@ -3346,7 +3351,7 @@ BlisseyEvosAttacks:
 	db 13, DOUBLESLAP
 	db 18, MINIMIZE
 	db 23, SING
-	db 28, EGG_BOMB
+	db 28, SEED_BOMB
 	db 33, DEFENSE_CURL
 	db 40, LIGHT_SCREEN
 	db 47, DOUBLE_EDGE

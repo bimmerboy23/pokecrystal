@@ -385,7 +385,7 @@ BrunoGroup:
 	db 52, HERACROSS
 		db $dd, $dd ; atk|def, spd|spc
 		dw $0000, $6400, $3200, $0000, $6400 ; hp, atk, def, spd, spc
-		db TAKE_DOWN, ROCK_SMASH, EARTHQUAKE, MEGAHORN 
+		db AERIAL_ACE, ROCK_SMASH, EARTHQUAKE, MEGAHORN 
 	db 53, MACHAMP
 		db $dd, $dd ; atk|def, spd|spc
 		dw $0000, $6400, $3200, $0000, $6400 ; hp, atk, def, spd, spc
@@ -444,7 +444,7 @@ KogaGroup:
 		db $dd, $dd ; atk|def, spd|spc
 		dw $0000, $6400, $0000, $6400, $3200 ; hp, atk, def, spd, spc
 		db GOLD_BERRY
-		db DOUBLE_TEAM, QUICK_ATTACK, WING_ATTACK, TOXIC 
+		db DOUBLE_TEAM, QUICK_ATTACK, AERIAL_ACE, TOXIC 
 	db -1 ; end
 
 ChampionGroup:
@@ -614,7 +614,7 @@ ErikaGroup:
 		db $db, $9f ; atk|def, spd|spc
 		dw $9600, $9600, $0000, $0000, $9600 ; hp, atk, def, spd, spc
 		db LEFTOVERS
-		db GIGA_DRAIN, CURSE, SLUDGE_BOMB, EARTHQUAKE
+		db GIGA_DRAIN, SWORDS_DANCE, SLUDGE_BOMB, EARTHQUAKE
 	db -1 ; end
 
 YoungsterGroup:

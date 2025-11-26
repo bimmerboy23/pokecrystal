@@ -118,6 +118,7 @@ ZubatEggMoves:
 	db -1 ; end
 
 OddishEggMoves:
+	db SEED_BOMB
 	db SWORDS_DANCE
 	db RAZOR_LEAF
 	db FLAIL
@@ -213,6 +214,7 @@ MachopEggMoves:
 	db -1 ; end
 
 BellsproutEggMoves:
+	db SEED_BOMB
 	db SWORDS_DANCE
 	db ENCORE
 	db REFLECT
@@ -464,6 +466,7 @@ DratiniEggMoves:
 	db -1 ; end
 
 ChikoritaEggMoves:
+	db SEED_BOMB
 	db OUTRAGE
 	db LEECH_SEED
 	db COUNTER
@@ -602,6 +605,7 @@ HoppipEggMoves:
 	db REFLECT
 	db AMNESIA
 	db PAY_DAY
+	db SEED_BOMB
 	db -1 ; end
 
 AipomEggMoves:

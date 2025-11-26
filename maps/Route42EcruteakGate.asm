@@ -35,25 +35,25 @@ Route42EcruteakGateCooltrainerFScript:
 	closetext
 	end
 
-Route42EcruteakGateCooltrainerFTextText:
+Route42EcruteakGateCooltrainerFText:
 	text "Hey, are you a"
 	line "new trainer?"
 
 	para "I have a new move"
-	line "that could help"
+	line "that will make your"
 
-	para "you on your journey!"
+	para "journey easier!"
 	line "Here take this."
 	done
 
-Route42EcruteakGateCooltrainerFText_GotAerialAce
+Route42EcruteakGateCooltrainerFText_GotAerialAce:
 	text "It's AERIAL ACE."
 
 	para "It's a new flying"
-	line "move."
+	line "TM."
 
 	para "It's a speedy"
-	line "unavoidable attack."
+	line "unavoidable move."
 	done
 
 Route42EcruteakGate_MapEvents:
